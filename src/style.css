@@ -27,33 +27,21 @@
   }
 }
 
-.pop-in-stagger > * {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: popIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-.pop-in-stagger > *:nth-child(1) {
-  animation-delay: 0.08s;
-}
-.pop-in-stagger > *:nth-child(2) {
-  animation-delay: 0.16s;
-}
-.pop-in-stagger > *:nth-child(3) {
-  animation-delay: 0.24s;
-}
-.pop-in-stagger > *:nth-child(4) {
-  animation-delay: 0.32s;
-}
-.pop-in-stagger > *:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
 /* -------------------------------------------------------------------------
    Utility layer (Tailwind @layer utilities)
 -------------------------------------------------------------------------- */
 @layer utilities {
   .container-section {
     @apply container mx-auto px-4 py-20 sm:py-28;
+  }
+}
+
+/* -------------------------------------------------------------------------
+  Components
+-------------------------------------------------------------------------- */
+@layer components {
+  .card {
+    @apply relative rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden transform-gpu will-change-transform transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:outline-none focus-visible:-translate-y-1 focus-visible:scale-[1.02] focus-visible:shadow-lg focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
   }
 }
 
@@ -71,31 +59,24 @@ html {
 }
 
 :root {
-  /* Upstart-inspired palette (purplish black) */
   --color-bg: #070507; /* near-black */
-  /* darker start to bias the top toward black */
   --color-gradient-start: #060409; /* darker near-black */
-  /* slightly richer mid purple for more punch */
   --color-gradient-mid: #2a0f4a; /* mid purple */
   --color-gradient-end: #4b1a9d; /* vivid purple */
   --color-accent: #8b3ff6;
   --color-accent-dark: #4e1d95;
   --color-muted: #9ea0b3;
-  /* section bleed defaults (can be overridden per-section via JS) */
   --section-bg: var(--color-bg);
   --section-bleed-height: 60px;
 }
 
-/* Leave body background to Tailwind utilities; keep default text color here. */
-/* Let Tailwind utilities control body colors for light/dark modes */
+/* Body background and text color are controlled by Tailwind utilities */
 body {
   color: inherit;
   background: transparent;
 }
 
-/* -------------------------------------------------------------------------
-   Buttons and small helpers
--------------------------------------------------------------------------- */
+/* Buttons and small helpers */
 .button-accent {
   background: var(--color-accent);
   color: #fff;
@@ -113,74 +94,9 @@ body {
   color: var(--color-muted);
 }
 
-/* -------------------------------------------------------------------------
-   Skill card component
-   - Replaces the old utility-heavy tile markup with a single class for
-     consistent theming (rounded, inner glow, subtle gradient, hover lift)
--------------------------------------------------------------------------- */
-.skill-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: linear-gradient(
-    180deg,
-    rgba(75, 26, 150, 0.12),
-    rgba(24, 24, 27, 0.85)
-  );
-  /* fallback solid color for older browsers */
-  background-color: rgba(24, 24, 27, 0.95);
-  border-radius: 0.5rem;
-  padding: 0.75rem;
-  box-shadow: 0 6px 20px rgba(75, 26, 150, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.02);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  min-height: 120px;
-}
-.skill-card img,
-.skill-card > div {
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
-}
-.skill-card span {
-  margin-top: 0.5rem;
-}
-.skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 36px rgba(75, 26, 150, 0.12);
-}
-
-/* Project card pop-out: apply to article cards in the projects grid.
-   Use :hover and :focus-within so keyboard users also receive the effect. */
-.projects-grid article,
-.projects-grid .project-card,
-article.project-card {
-  /* slightly longer, non-linear transition for a smoother feel */
-  transition: transform 220ms cubic-bezier(.16,.84,.24,1), box-shadow 220ms cubic-bezier(.16,.84,.24,1), box-shadow 220ms cubic-bezier(.16,.84,.24,1);
-  will-change: transform;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  /* ensure the stacking context behaves when we lift the card */
-  position: relative;
-}
-/* Target hover/focus both on the article and on a full-bleed anchor inside it */
-.projects-grid article:hover,
-.projects-grid article:focus-within,
-.projects-grid article a.block:hover,
-.projects-grid article a.block:focus,
-.projects-grid .project-card:hover,
-.projects-grid .project-card:focus-within,
-article.project-card:hover,
-article.project-card:focus-within {
-  /* force the transform so it applies even if other rules exist */
-  transform: translateY(-10px) scale(1.02) !important;
-  box-shadow: 0 24px 64px rgba(26, 8, 63, 0.28), 0 4px 18px rgba(0,0,0,0.18) !important;
-  z-index: 3 !important;
-}
-
-/* Accent ring and final shadow: applied to the article's pseudo-element to avoid clipping */
-.projects-grid article:hover::after,
-.projects-grid article:focus-within::after {
+.card::after,
+.card:focus-visible::after,
+.card:hover::after {
   content: '';
   position: absolute;
   inset: -6px;
@@ -189,29 +105,32 @@ article.project-card:focus-within {
   pointer-events: none;
 }
 
-/* Ensure overflow allows the outer ring and shadow to be visible */
-.projects-grid article {
-  overflow: visible !important;
+/* Global card hover / keyboard focus: single source of truth for all cards */
+.card:hover,
+.card:focus-visible,
+.card:focus-within {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 24px 64px rgba(26, 8, 63, 0.28), 0 4px 18px rgba(0,0,0,0.18);
+  z-index: 3;
 }
 
 /* Make the outline more visible on keyboard focus for accessibility */
-.projects-grid article:focus-within,
-.projects-grid article a.block:focus {
+.card:focus,
+.card:focus-within,
+.card:focus-visible {
   outline: none;
   box-shadow: 0 18px 52px rgba(26, 8, 63, 0.24), 0 0 0 6px rgba(139,63,246,0.08);
 }
 
-/* Respect prefers-reduced-motion */
+/* Respect prefers-reduced-motion: target pop-in and cards globally */
 @media (prefers-reduced-motion: reduce) {
   .pop-in {
     animation: none;
     transform: none;
     opacity: 1;
   }
-  .projects-grid article,
-  .projects-grid .project-card,
-  article.project-card {
-    transition: none;
+  .card {
+    transition: none !important;
     transform: none !important;
     box-shadow: none !important;
   }
