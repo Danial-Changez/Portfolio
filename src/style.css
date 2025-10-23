@@ -9,7 +9,6 @@
 .pop-in {
   opacity: 0;
   transform: translateY(28px) scale(.998);
-  /* smoother, snappier entrance with a gentle easing */
   animation: popIn 0.64s cubic-bezier(.2, .9, .28, 1) 0.08s both;
 }
 
