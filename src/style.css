@@ -31,7 +31,7 @@
 -------------------------------------------------------------------------- */
 @layer utilities {
   .container-section {
-    @apply container mx-auto px-4 py-20 sm:py-28;
+    @apply container mx-auto px-4 py-16 sm:py-20;
   }
 }
 
@@ -41,6 +41,23 @@
 @layer components {
   .card {
     @apply relative rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden transform-gpu will-change-transform transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:outline-none focus-visible:-translate-y-1 focus-visible:scale-[1.02] focus-visible:shadow-lg focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
+  }
+
+  .skill-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.86));
+    color: inherit;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+  }
+
+  .dark .skill-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.75));
+    border-color: rgba(148, 163, 184, 0.35);
+    box-shadow: 0 16px 36px rgba(4, 6, 16, 0.55);
+  }
+
+  .section-pane {
+    @apply rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800/80 shadow-lg;
   }
 }
 
@@ -73,6 +90,26 @@ html {
 body {
   color: inherit;
   background: transparent;
+}
+
+.page-surface {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 50% 10%, rgba(139, 63, 246, 0.14), transparent 40%),
+    radial-gradient(900px 520px at 20% 60%, rgba(76, 38, 140, 0.16), transparent 42%),
+    radial-gradient(960px 520px at 80% 78%, rgba(78, 121, 253, 0.12), transparent 44%),
+    linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-mid) 52%, var(--color-gradient-end) 100%);
+  overflow-x: hidden;
+}
+
+.page-surface::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(160% 80% at 50% 10%, rgba(255, 255, 255, 0.02), transparent 55%);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: -1;
 }
 
 /* Buttons and small helpers */
@@ -285,6 +322,16 @@ body {
 .section-bleed > * {
   position: relative;
   z-index: 1;
+}
+
+/* Inputs */
+.input-field {
+  @apply rounded-md border border-slate-300 dark:border-slate-700 bg-white/90 dark:bg-slate-900/80 px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.input-field.input-error {
+  @apply border-rose-400 focus:ring-rose-400 focus:border-rose-400 bg-rose-50/60 dark:bg-rose-900/10;
 }
 
 /* Bottom-facing bleed helper: place on the preceding section to softly fade
