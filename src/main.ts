@@ -1,50 +1,32 @@
 import './style.css'
 
-// Mobile nav toggle
+document.addEventListener('DOMContentLoaded', () => {
+  setupMobileNav()
+  setupScrollSpy()
+  initSectionBleeds()
+  setupContactForm()
+})
+
 function setupMobileNav() {
-	const btn = document.querySelector<HTMLButtonElement>('#mobile-menu-btn')
-	const menu = document.querySelector<HTMLDivElement>('#mobile-menu')
-	if (!btn || !menu) return
+  const btn = document.querySelector<HTMLButtonElement>('#mobile-menu-btn')
+  const menu = document.querySelector<HTMLDivElement>('#mobile-menu')
+  if (!btn || !menu) return
 
-	btn.addEventListener('click', () => {
-		const expanded = btn.getAttribute('aria-expanded') === 'true'
-		btn.setAttribute('aria-expanded', String(!expanded))
-		menu.classList.toggle('hidden')
-	})
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true'
+    btn.setAttribute('aria-expanded', String(!expanded))
+    menu.classList.toggle('hidden')
+  })
 }
 
-// Scrollspy for active section
 function setupScrollSpy() {
-	const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-scroll]'))
-	const sections = links
- 		.map((a) => {
- 			const href = a.getAttribute('href') || ''
- 			if (!href.startsWith('#')) return null
- 			return document.querySelector<HTMLElement>(href)
- 		})
- 		.filter((el): el is HTMLElement => !!el)
-
-	if (!sections.length) return
-
-	const observer = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				const target = entry.target as HTMLElement
-				if (!target.id) return
-				const id = '#' + target.id
-				const link = links.find((l) => l.getAttribute('href') === id)
-				if (!link) return
-				if (entry.isIntersecting) {
-					links.forEach((l) => l.classList.remove('text-indigo-600', 'dark:text-indigo-400'))
-					link.classList.add('text-indigo-600', 'dark:text-indigo-400')
-				}
-			})
-		},
-		{ rootMargin: '-30% 0px -60% 0px', threshold: [0, 0.25, 0.5, 1] }
-	)
-
-	sections.forEach((s) => observer.observe(s))
-}
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-scroll]'))
+  const sections = links
+    .map((anchor) => {
+      const href = anchor.getAttribute('href') || ''
+      return href.startsWith('#') ? document.querySelector<HTMLElement>(href) : null
+    })
+    .filter((el): el is HTMLElement => Boolean(el))
 
 document.addEventListener('DOMContentLoaded', () => {
         // theme toggle removed
@@ -54,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setupContactForm()
 })
 
-// Section bleed initializer: reads data attributes and sets CSS variables per-section
 function initSectionBleeds() {
   const sections = Array.from(document.querySelectorAll<HTMLElement>('section[data-section-bg]'))
   const bleedPresets: Record<string, string> = {
