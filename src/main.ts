@@ -28,50 +28,37 @@ function setupScrollSpy() {
     })
     .filter((el): el is HTMLElement => Boolean(el))
 
-  if (!sections.length) return
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const target = entry.target as HTMLElement
-        if (!target.id) return
-
-        const link = links.find((anchor) => anchor.getAttribute('href') === `#${target.id}`)
-        if (!link) return
-
-        if (entry.isIntersecting) {
-          links.forEach((anchor) => anchor.classList.remove('text-indigo-600', 'dark:text-indigo-400'))
-          link.classList.add('text-indigo-600', 'dark:text-indigo-400')
-        }
-      })
-    },
-    { rootMargin: '-30% 0px -60% 0px', threshold: [0, 0.25, 0.5, 1] }
-  )
-
-  sections.forEach((section) => observer.observe(section))
-}
+document.addEventListener('DOMContentLoaded', () => {
+        // theme toggle removed
+        setupMobileNav()
+        setupScrollSpy()
+        initSectionBleeds()
+        setupContactForm()
+})
 
 function initSectionBleeds() {
   const sections = Array.from(document.querySelectorAll<HTMLElement>('section[data-section-bg]'))
-  const bleedPresets: Record<string, string> = { subtle: '36px', medium: '60px', strong: '96px' }
+  const bleedPresets: Record<string, string> = {
+    subtle: '36px',
+    medium: '60px',
+    strong: '96px',
+  }
 
-  sections.forEach((section) => {
-    const background = section.dataset.sectionBg
-    const bleed = section.dataset.bleed || 'medium'
+  sections.forEach((sec) => {
+    const bg = sec.dataset.sectionBg
+    const bleed = sec.dataset.bleed || 'medium'
+    if (bg) sec.style.setProperty('--section-bg', bg)
     const preset = bleedPresets[bleed] || bleedPresets.medium
-
-    if (background) section.style.setProperty('--section-bg', background)
-    section.style.setProperty('--section-bleed-height', preset)
-
-    const hasBleedClass = section.classList.contains('section-bleed') || section.classList.contains('section-bleed-bottom')
-    if (!hasBleedClass) section.classList.add('section-bleed')
+    sec.style.setProperty('--section-bleed-height', preset)
+    if (!sec.classList.contains('section-bleed-bottom') && !sec.classList.contains('section-bleed')) {
+      sec.classList.add('section-bleed')
+    }
   })
 }
 
+// Contact form handler: basic validation + mailto handoff
 function setupContactForm() {
   const form = document.querySelector<HTMLFormElement>('#contact-form')
-  if (!form) return
-
   const status = document.querySelector<HTMLParagraphElement>('#contact-status')
   const fields = {
     name: document.querySelector<HTMLInputElement>('#name'),
@@ -79,19 +66,32 @@ function setupContactForm() {
     message: document.querySelector<HTMLTextAreaElement>('#message'),
   }
 
+  if (!form) return
+
   form.addEventListener('submit', (event) => {
     event.preventDefault()
-
     const formData = new FormData(form)
     const name = (formData.get('name') || '').toString().trim()
     const email = (formData.get('email') || '').toString().trim()
     const message = (formData.get('message') || '').toString().trim()
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
-    const invalidFields = validateFields({ name, email, message })
-    toggleFieldErrors(fields, invalidFields)
+    const invalidFields: Array<keyof typeof fields> = []
+    if (!name) invalidFields.push('name')
+    if (!email || !emailValid) invalidFields.push('email')
+    if (!message) invalidFields.push('message')
+
+    Object.entries(fields).forEach(([key, el]) => {
+      if (!el) return
+      el.classList.toggle('input-error', invalidFields.includes(key as keyof typeof fields))
+    })
 
     if (invalidFields.length) {
-      updateStatus(status, 'Please add your name, a valid email, and a short message so I can get back to you.', true)
+      if (status) {
+        status.textContent = 'Please add your name, a valid email, and a short message so I can get back to you.'
+        status.classList.remove('text-emerald-500')
+        status.classList.add('text-rose-500')
+      }
       return
     }
 
@@ -100,40 +100,13 @@ function setupContactForm() {
     const mailto = `mailto:dchangez@uoguelph.ca?subject=${subject}&body=${body}`
 
     window.location.href = mailto
-    updateStatus(
-      status,
-      'Opening your email client… if nothing happens, you can email me directly at dchangez@uoguelph.ca.',
-      false
-    )
+
+    if (status) {
+      status.textContent = 'Opening your email client… if nothing happens, you can email me directly at dchangez@uoguelph.ca.'
+      status.classList.remove('text-rose-500')
+      status.classList.add('text-emerald-500')
+    }
 
     form.reset()
   })
-}
-
-function validateFields(values: { name: string; email: string; message: string }) {
-  const invalid: Array<keyof typeof values> = []
-  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)
-
-  if (!values.name) invalid.push('name')
-  if (!values.email || !emailValid) invalid.push('email')
-  if (!values.message) invalid.push('message')
-
-  return invalid
-}
-
-function toggleFieldErrors(
-  fields: Record<'name' | 'email' | 'message', HTMLInputElement | HTMLTextAreaElement | null>,
-  invalidFields: Array<'name' | 'email' | 'message'>
-) {
-  Object.entries(fields).forEach(([key, el]) => {
-    if (!el) return
-    el.classList.toggle('input-error', invalidFields.includes(key as keyof typeof fields))
-  })
-}
-
-function updateStatus(element: HTMLParagraphElement | null, message: string, isError: boolean) {
-  if (!element) return
-  element.textContent = message
-  element.classList.toggle('text-rose-500', isError)
-  element.classList.toggle('text-emerald-500', !isError)
 }
