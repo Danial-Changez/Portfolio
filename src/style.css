@@ -1,11 +1,7 @@
-/* Tailwind import -------------------------------------------------------- */
+/* Tailwind import */
 @import "tailwindcss";
 
-/* -------------------------------------------------------------------------
-   Animations
-   - pop-in (single) and pop-in-stagger helper
-   Keep these at the top so utilities can reference the keyframe.
--------------------------------------------------------------------------- */
+/* Animations */
 .pop-in {
   opacity: 0;
   transform: translateY(28px) scale(.998);
@@ -26,18 +22,12 @@
   }
 }
 
-/* -------------------------------------------------------------------------
-   Utility layer (Tailwind @layer utilities)
--------------------------------------------------------------------------- */
 @layer utilities {
   .container-section {
     @apply container mx-auto px-4 py-14 sm:py-18;
   }
 }
 
-/* -------------------------------------------------------------------------
-  Components
--------------------------------------------------------------------------- */
 @layer components {
   .card {
     @apply relative rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden transform-gpu will-change-transform transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:outline-none focus-visible:-translate-y-1 focus-visible:scale-[1.02] focus-visible:shadow-lg focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
@@ -62,9 +52,7 @@
   }
 }
 
-/* -------------------------------------------------------------------------
-   Global defaults & variables
--------------------------------------------------------------------------- */
+/* Global defaults & variables */
 html {
   scroll-behavior: smooth;
 }
@@ -88,7 +76,6 @@ html {
   --section-bleed-color: rgba(75, 26, 150, 0.45);
 }
 
-/* Body background and text color are controlled by Tailwind utilities */
 body {
   color: inherit;
   background: transparent;
@@ -165,7 +152,6 @@ body {
   pointer-events: none;
 }
 
-/* Global card hover / keyboard focus: single source of truth for all cards */
 .card:hover,
 .card:focus-visible,
 .card:focus-within {
@@ -174,7 +160,6 @@ body {
   z-index: 3;
 }
 
-/* Make the outline more visible on keyboard focus for accessibility */
 .card:focus,
 .card:focus-within,
 .card:focus-visible {
@@ -182,7 +167,6 @@ body {
   box-shadow: 0 18px 52px rgba(26, 8, 63, 0.24), 0 0 0 6px rgba(139,63,246,0.08);
 }
 
-/* Respect prefers-reduced-motion: target pop-in and cards globally */
 @media (prefers-reduced-motion: reduce) {
   .pop-in {
     animation: none;
@@ -196,12 +180,8 @@ body {
   }
 }
 
-/* -------------------------------------------------------------------------
-   Hero: full-bleed gradient + overlays
-   - .bg-gradient should wrap the container so pseudo-elements can extend edge-to-edge
--------------------------------------------------------------------------- */
+/* Hero gradient */
 .bg-gradient {
-  /* Two-layer radial approach: large centered glow + offset diagonal glow for depth */
   background-image: radial-gradient(
     900px 500px at 50% 30%,
     rgba(123, 63, 242, 0.34),
@@ -213,12 +193,10 @@ body {
   overflow: hidden;
 }
 
-/* subtle top highlight (overlay) */
 .bg-gradient::before {
   content: "";
   position: absolute;
   inset: 0;
-  /* very soft highlight to lift the center without creating lines */
   background: radial-gradient(
     140% 70% at 50% 22%,
     rgba(255, 255, 255, 0.03),
@@ -229,33 +207,21 @@ body {
   z-index: 0;
 }
 
-/* vignette / depth overlay: start fully transparent at the very top */
 .bg-gradient::after {
-  /* Disable the hero vignette to avoid dark banding where the gradient continues
-     into the About section. If a soft vignette is desired later, reintroduce
-     with much lower alpha or narrower stops. */
   display: none;
 }
 
-/* The hero container is positioned so overlays can sit behind content when used */
 #home {
   position: relative;
 }
 
-/* Ensure hero content sits above overlays */
 .bg-gradient > .container-section {
   position: relative;
   z-index: 1;
 }
 
-/* -------------------------------------------------------------------------
-   Upstart-like background helpers
-   - .linear-bg: smooth vertical linear that works well across Home -> About
-   - .radial-bg: placement for soft radial glows in content areas (Skills/Projects)
--------------------------------------------------------------------------- */
+/* Section background helpers */
 .linear-bg {
-  /* Darker top: hold the darker start longer (~50%) then transition to
-     the richer purple mid and vivid end for the lower area (~50%). */
   background-image: linear-gradient(
     180deg,
     var(--color-gradient-start) 0%,
@@ -273,27 +239,47 @@ body {
   z-index: 1;
 }
 
-.radial-bg {
-  background:
-    radial-gradient(720px 420px at 65% 32%, rgba(139, 63, 246, 0.22), transparent 38%),
-    radial-gradient(560px 320px at 18% 78%, rgba(76, 38, 140, 0.12), transparent 44%),
-    linear-gradient(180deg, var(--color-gradient-end) 0%, #1a0a2f 46%, #0c0716 100%);
+.linear-bg-strong {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-gradient-end) 0%,
+    var(--color-gradient-mid) 28%,
+    var(--color-gradient-start) 60%,
+    #0c0716 100%
+  );
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   position: relative;
   overflow: hidden;
 }
-.radial-bg > .container-section {
+.linear-bg-strong > .container-section {
+  position: relative;
+  z-index: 1;
+}
+
+.linear-bg-soft {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-gradient-start) 0%,
+    var(--color-gradient-mid) 55%,
+    #1a0a2f 78%,
+    #0c0716 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.linear-bg-soft > .container-section {
   position: relative;
   z-index: 1;
 }
 
 /* reuse a subtle overlay for both helpers */
-.radial-bg::before {
+.linear-bg-strong::before,
+.linear-bg-soft::before {
   content: "";
   position: absolute;
-  inset: 0;
   background: radial-gradient(
     140% 80% at 50% 22%,
     rgba(255, 255, 255, 0.02),
@@ -304,16 +290,14 @@ body {
   z-index: 0;
 }
 .linear-bg::after {
-  /* Remove the dark vignette for a seamless blend into the following section */
   display: none;
 }
-.radial-bg::after {
-  /* disable the radial vignette overlay to avoid darkening the top edge */
+.linear-bg-strong::after,
+.linear-bg-soft::after {
   display: none;
 }
 
-/* Section bleed helper: place on the following section to softly blend from
-   the previous section's background. Use sparingly where needed. */
+/* Section bleed helpers */
 .section-bleed {
   position: relative;
 }
@@ -325,13 +309,29 @@ body {
   top: calc(var(--section-bleed-height) * -1);
   height: var(--section-bleed-height);
   pointer-events: none;
-  /* smoother fade into the section background to avoid dark mid-band */
   background: linear-gradient(
     180deg,
     rgba(75, 26, 150, 0) 0%,
     rgba(75, 26, 150, 0.16) 36%,
     rgba(50, 18, 100, 0.28) 68%,
     rgba(12, 7, 22, 0.9) 100%
+  );
+  z-index: 0;
+}
+.section-bleed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--section-bleed-height) * -1);
+  height: var(--section-bleed-height);
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(139, 63, 246, 0.28) 0%,
+    rgba(108, 45, 190, 0.18) 42%,
+    rgba(75, 26, 150, 0.12) 72%,
+    rgba(75, 26, 150, 0) 100%
   );
   z-index: 0;
 }
@@ -353,13 +353,13 @@ body {
 }
 
 /* Contact layout */
-.contact-pane {
+.pane-surface {
   backdrop-filter: blur(10px);
   background: linear-gradient(145deg, rgba(14, 10, 26, 0.9), rgba(24, 16, 46, 0.9));
   border-color: rgba(255, 255, 255, 0.06);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
-.dark .contact-pane {
+.dark .pane-surface {
   background: linear-gradient(145deg, rgba(8, 6, 14, 0.92), rgba(18, 12, 30, 0.9));
   border-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
@@ -403,41 +403,8 @@ body {
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
 }
 
-/* Bottom-facing bleed helper: place on the preceding section to softly fade
-  down into the following section. This avoids overlaying a dark color from
-  the following section on top of the gradient. */
-.section-bleed-bottom {
-  position: relative;
-}
-.section-bleed-bottom::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: calc(var(--section-bleed-height) * -1);
-  height: var(--section-bleed-height);
-  pointer-events: none;
-  /* softer, colored fade that follows the theme instead of injecting a
-     near-black block. Using a semi-transparent purple that matches the
-     gradient midtones for a seamless transition. */
-  background: linear-gradient(
-    180deg,
-    rgba(139, 63, 246, 0.22) 0%,
-    rgba(99, 38, 180, 0.14) 42%,
-    rgba(75, 26, 150, 0.1) 72%,
-    rgba(75, 26, 150, 0) 100%
-  );
-  z-index: 0;
-}
-
-/* -------------------------------------------------------------------------
-   Header behavior
-   - Prefer a transparent background so the gradient shows through.
-   - You can replace this with a translucent color if you want more contrast.
--------------------------------------------------------------------------- */
 header {
-  /* Let the hero show through; remove the bottom border which can create a hard line */
-  background-color: transparent !important;
+  background-color: var(--color-gradient-start) !important;
   border-bottom-color: transparent !important;
   border-bottom: none !important;
   box-shadow: none !important;

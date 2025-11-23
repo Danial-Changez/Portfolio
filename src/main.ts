@@ -53,9 +53,9 @@ function setupScrollSpy() {
 function initSectionBleeds() {
   const sections = Array.from(document.querySelectorAll<HTMLElement>('section[data-section-bg]'))
   const bleedPresets: Record<string, string> = {
-    subtle: '36px',
-    medium: '60px',
-    strong: '96px',
+    subtle: '42px',
+    medium: '84px',
+    strong: '128px',
   }
 
   sections.forEach((sec, index) => {
@@ -66,10 +66,6 @@ function initSectionBleeds() {
     sec.style.setProperty('--section-bleed-height', preset)
     if (!sec.classList.contains('section-bleed')) {
       sec.classList.add('section-bleed')
-    }
-    const isLast = index === sections.length - 1
-    if (!isLast && !sec.classList.contains('section-bleed-bottom')) {
-      sec.classList.add('section-bleed-bottom')
     }
   })
 }
