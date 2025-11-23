@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupMobileNav()
   setupScrollSpy()
   initSectionBleeds()
+  initPointerGlow()
   setupContactForm()
 })
 
@@ -28,13 +29,26 @@ function setupScrollSpy() {
     })
     .filter((el): el is HTMLElement => Boolean(el))
 
-document.addEventListener('DOMContentLoaded', () => {
-        // theme toggle removed
-        setupMobileNav()
-        setupScrollSpy()
-        initSectionBleeds()
-        setupContactForm()
-})
+  if (!sections.length) return
+
+  const activateLink = (hash: string | null) => {
+    links.forEach((link) => {
+      link.classList.toggle('text-emerald-500', link.getAttribute('href') === hash)
+    })
+  }
+
+  const onScroll = () => {
+    const scrollPos = window.scrollY + window.innerHeight / 4
+    const activeSection = sections.reduce<HTMLElement | null>((current, section) => {
+      return section.offsetTop <= scrollPos ? section : current
+    }, sections[0])
+
+    activateLink(activeSection ? `#${activeSection.id}` : null)
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onScroll()
+}
 
 function initSectionBleeds() {
   const sections = Array.from(document.querySelectorAll<HTMLElement>('section[data-section-bg]'))
@@ -44,16 +58,64 @@ function initSectionBleeds() {
     strong: '96px',
   }
 
-  sections.forEach((sec) => {
+  sections.forEach((sec, index) => {
     const bg = sec.dataset.sectionBg
     const bleed = sec.dataset.bleed || 'medium'
     if (bg) sec.style.setProperty('--section-bg', bg)
     const preset = bleedPresets[bleed] || bleedPresets.medium
     sec.style.setProperty('--section-bleed-height', preset)
-    if (!sec.classList.contains('section-bleed-bottom') && !sec.classList.contains('section-bleed')) {
+    if (!sec.classList.contains('section-bleed')) {
       sec.classList.add('section-bleed')
     }
+    const isLast = index === sections.length - 1
+    if (!isLast && !sec.classList.contains('section-bleed-bottom')) {
+      sec.classList.add('section-bleed-bottom')
+    }
   })
+}
+
+function initPointerGlow() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (prefersReducedMotion) return
+
+  const root = document.documentElement
+  const glow = document.createElement('div')
+  glow.className = 'pointer-glow'
+  document.body.appendChild(glow)
+
+  let targetX = window.innerWidth * 0.5
+  let targetY = window.innerHeight * 0.32
+  let raf = 0
+
+  const render = () => {
+    root.style.setProperty('--glow-x', `${targetX}px`)
+    root.style.setProperty('--glow-y', `${targetY}px`)
+    raf = 0
+  }
+
+  const queueRender = () => {
+    if (raf) return
+    raf = requestAnimationFrame(render)
+  }
+
+  const onPointerMove = (event: PointerEvent) => {
+    targetX = event.clientX
+    targetY = event.clientY
+    glow.classList.add('is-visible')
+    queueRender()
+  }
+
+  const resetPosition = () => {
+    targetX = window.innerWidth * 0.5
+    targetY = window.innerHeight * 0.32
+    glow.classList.remove('is-visible')
+    queueRender()
+  }
+
+  window.addEventListener('pointermove', onPointerMove, { passive: true })
+  window.addEventListener('pointerleave', resetPosition)
+
+  queueRender()
 }
 
 // Contact form handler: basic validation + mailto handoff
