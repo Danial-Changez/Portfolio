@@ -58,7 +58,7 @@ function initSectionBleeds() {
     strong: '128px',
   }
 
-  sections.forEach((sec, index) => {
+  sections.forEach((sec) => {
     const bg = sec.dataset.sectionBg
     const bleed = sec.dataset.bleed || 'medium'
     if (bg) sec.style.setProperty('--section-bg', bg)
