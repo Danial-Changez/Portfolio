@@ -10,19 +10,19 @@
   <div id="app">
     <header
       class="sticky top-0 z-40 backdrop-blur supports-backdrop-filter:bg-white/60 dark:supports-backdrop-filter:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/50">
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 panel-container">
         <div class="flex items-center justify-between h-20">
-          <a href="#home" class="font-semibold tracking-tight text-xl">DC</a>
-          <nav class="hidden md:flex md:justify-center md:z-10 items-center gap-7 text-base">
-            <a data-scroll href="#home" class="hover:text-slate-900 dark:hover:text-white">Home</a>
-            <a data-scroll href="#skills" class="hover:text-slate-900 dark:hover:text-white">Skills</a>
-            <a data-scroll href="#projects" class="hover:text-slate-900 dark:hover:text-white">Projects</a>
-            <a data-scroll href="#contact" class="hover:text-slate-900 dark:hover:text-white">Contact</a>
+          <a href="#home" class="font-semibold tracking-tight text-2xl">DC</a>
+          <nav class="hidden md:flex md:justify-center md:z-10 items-center gap-8 text-xl">
+            <a data-scroll href="#home" class="nav-link">Home</a>
+            <a data-scroll href="#skills" class="nav-link">Skills</a>
+            <a data-scroll href="#projects" class="nav-link">Projects</a>
+            <a data-scroll href="#contact" class="nav-link">Contact</a>
           </nav>
           <div class="flex items-center gap-2">
             <a href="https://github.com/Danial-Changez" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
               class="hidden sm:inline-flex rounded-md p-3 hover:bg-slate-100 dark:hover:bg-slate-800">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-10 w-10">
                 <path fill-rule="evenodd"
                   d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.866-.013-1.699-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.607.069-.607 1.004.07 1.532 1.03 1.532 1.03.892 1.53 2.341 1.088 2.91.833.091-.646.35-1.088.636-1.338-2.221-.252-4.555-1.112-4.555-4.946 0-1.092.39-1.987 1.029-2.688-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.026 2.748-1.026.545 1.377.202 2.394.1 2.647.64.701 1.028 1.596 1.028 2.688 0 3.842-2.337 4.692-4.566 4.94.359.31.679.92.679 1.855 0 1.338-.012 2.417-.012 2.744 0 .268.18.58.688.481C19.138 20.162 22 16.416 22 12c0-5.523-4.477-10-10-10Z"
                   clip-rule="evenodd" />
@@ -30,7 +30,7 @@
             </a>
             <a href="https://linkedin.com/in/danial-changez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
               class="hidden sm:inline-flex rounded-md p-3 hover:bg-slate-100 dark:hover:bg-slate-800">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-10 w-10">
                 <path
                   d="M4.983 3.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM3.75 9h2.466v11H3.75V9ZM9.75 9h2.362v1.505h.034c.329-.624 1.134-1.281 2.334-1.281 2.497 0 2.957 1.644 2.957 3.78V20h-2.466v-5.29c0-1.261-.023-2.884-1.758-2.884-1.76 0-2.028 1.374-2.028 2.79V20H9.75V9Z" />
               </svg>
@@ -56,24 +56,24 @@
     </header>
 
     <!-- Home (full-width gradient) -->
-    <section id="home" class="min-h-screen relative flex items-center linear-wrapper linear-bg">
-      <div class="container-section">
+    <section id="home" class="min-h-[80vh] relative flex items-center linear-wrapper linear-bg">
+      <div class="container-section panel-container">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <p class="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 pop-in">Hello, I'm</p>
-            <h1 class="mt-2 text-4xl sm:text-5xl font-bold leading-tight pop-in" style="animation-delay: 0.1s">
+            <p class="hero-eyebrow text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 pop-in">Hello, I'm</p>
+            <h1 class="hero-title mt-2 text-5xl sm:text-5xl font-bold leading-tight pop-in" style="animation-delay: 0.1s">
               Danial Changez
             </h1>
-            <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 pop-in" style="animation-delay: 0.2s">
-              Computer Engineering student focused on automation (PowerShell), desktop apps (WPF), and tooling (GitHub
-              Apps, Selenium/web scraping).
+            <p class="hero-body mt-4 text-lg text-slate-600 dark:text-slate-300 pop-in" style="animation-delay: 0.2s">
+              Computer Engineering student with experience in Digital Design, Scripting, CI/CD workflows. I have worked on several
+              exciting projects, such as Tetris with a full UI in Verilog, creating a custom AXI4 IP core for a 6-bit 3x3 matrix multiplier, 
+              and transforming a simple script into a production-ready app.
             </p>
-            <a href="/resume.pdf" class="mt-6 inline-flex items-center gap-2 rounded-md button-accent pop-in"
+            <a href="/resume.pdf" class="hero-cta mt-6 inline-flex items-center gap-2 rounded-md button-accent pop-in"
               style="animation-delay: 0.5s" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
           </div>
           <div class="flex justify-center lg:justify-end pop-in" style="animation-delay: 0.2s">
-            <div
-              class="h-48 w-48 sm:h-60 sm:w-60 rounded-full bg-linear-to-tr from-indigo-500 via-sky-500 to-emerald-400 p-1">
+            <div class="hero-avatar rounded-full avatar-frame p-1">
               <div class="h-full w-full rounded-full overflow-hidden bg-white dark:bg-slate-900">
                 <img src="/pfp.jpg" alt="Profile photo" class="h-full w-full object-cover object-center block" />
               </div>
@@ -86,8 +86,8 @@
     <!-- Skills -->
     <section id="skills" data-section-bg="var(--color-bg)" data-bleed="medium"
       class="linear-bg-strong section-bleed py-20">
-      <div class="container-section">
-        <div class="section-pane pane-surface p-6 sm:p-8">
+      <div class="container-section panel-container">
+        <div class="section-pane pane-surface panel-frame p-6 sm:p-8">
           <div class="flex items-end justify-between gap-4">
             <div>
               <h2 class="text-2xl font-semibold pop-in">Skills</h2>
@@ -226,8 +226,8 @@
     <!-- Projects -->
     <section id="projects" data-section-bg="var(--color-bg)" data-bleed="medium"
       class="linear-bg section-bleed py-20">
-      <div class="container-section">
-        <div class="section-pane pane-surface p-6 sm:p-8">
+      <div class="container-section panel-container">
+        <div class="section-pane pane-surface panel-frame p-6 sm:p-8">
           <div class="flex items-end justify-between gap-4">
             <h2 class="text-2xl font-semibold">Projects</h2>
             <a href="https://github.com/Danial-Changez" target="_blank" rel="noopener"
@@ -356,9 +356,9 @@
     <!-- Contact -->
     <section id="contact" data-section-bg="var(--color-bg)" data-bleed="medium"
       class="linear-bg-strong section-bleed py-20">
-      <div class="container-section">
+      <div class="container-section panel-container">
         <div class="max-w-4xl lg:max-w-5xl mx-auto space-y-6">
-          <div class="section-pane pane-surface p-6 sm:p-7 lg:p-8 space-y-5">
+          <div class="section-pane pane-surface panel-frame p-6 sm:p-7 lg:p-8 space-y-5">
             <h2 class="text-2xl font-semibold">Contact</h2>
             <p class="text-slate-600 dark:text-slate-300">Thanks for visiting my Website! Feel free to reach out for any questions.</p>
             <form id="contact-form" class="contact-grid" novalidate>
