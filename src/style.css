@@ -367,7 +367,7 @@ body {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13.54vw, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 13.54vw, 340px), 1fr));
   gap: 1rem 1.25rem;
   align-items: flex-start;
 }
@@ -382,14 +382,14 @@ body {
 
 #contact-form .input-field {
   width: 100%;
-  min-height: 4.44vh;
+  min-height: clamp(44px, 2.5vw, 56px);
 }
 #contact-form textarea {
-  min-height: 13.89vh;
+  min-height: clamp(140px, 7.81vw, 220px);
   resize: vertical;
 }
 .contact-submit {
-  height: 4.81vh;
+  height: clamp(48px, 2.71vw, 60px);
 }
 .contact-card {
   width: 100%;
