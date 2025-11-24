@@ -72,7 +72,7 @@ html {
   --color-accent-dark: #4e1d95;
   --color-muted: #9ea0b3;
   --section-bg: var(--color-bg);
-  --section-bleed-height: 60px;
+  --section-bleed-height: 5.56vh;
   --section-bleed-color: rgba(75, 26, 150, 0.45);
 }
 
@@ -85,9 +85,9 @@ body {
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  background: radial-gradient(1200px 600px at 50% 10%, rgba(139, 63, 246, 0.14), transparent 40%),
-    radial-gradient(900px 520px at 20% 60%, rgba(76, 38, 140, 0.16), transparent 42%),
-    radial-gradient(960px 520px at 80% 78%, rgba(78, 121, 253, 0.12), transparent 44%),
+  background: radial-gradient(62.5vw 55.56vh at 50% 10%, rgba(139, 63, 246, 0.14), transparent 40%),
+    radial-gradient(46.88vw 48.15vh at 20% 60%, rgba(76, 38, 140, 0.16), transparent 42%),
+    radial-gradient(50vw 48.15vh at 80% 78%, rgba(78, 121, 253, 0.12), transparent 44%),
     linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-mid) 52%, var(--color-gradient-end) 100%);
   overflow-x: hidden;
 }
@@ -97,7 +97,7 @@ body {
   inset: 0;
   pointer-events: none;
   background: radial-gradient(
-    260px 260px at var(--glow-x, 50%) var(--glow-y, 32%),
+    24.1vmin 24.1vmin at var(--glow-x, 50%) var(--glow-y, 32%),
     rgba(139, 63, 246, 0.3),
     rgba(75, 26, 150, 0.22) 42%,
     rgba(12, 7, 22, 0) 70%
@@ -183,7 +183,7 @@ body {
 /* Hero gradient */
 .bg-gradient {
   background-image: radial-gradient(
-    900px 500px at 50% 30%,
+    46.88vw 46.3vh at 50% 30%,
     rgba(123, 63, 242, 0.34),
     transparent 35%
   );
@@ -367,7 +367,7 @@ body {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13.54vw, 1fr));
   gap: 1rem 1.25rem;
   align-items: flex-start;
 }
@@ -382,14 +382,14 @@ body {
 
 #contact-form .input-field {
   width: 100%;
-  min-height: 48px;
+  min-height: 4.44vh;
 }
 #contact-form textarea {
-  min-height: 150px;
+  min-height: 13.89vh;
   resize: vertical;
 }
 .contact-submit {
-  height: 52px;
+  height: 4.81vh;
 }
 .contact-card {
   width: 100%;

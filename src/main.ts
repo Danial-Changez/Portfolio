@@ -53,9 +53,9 @@ function setupScrollSpy() {
 function initSectionBleeds() {
   const sections = Array.from(document.querySelectorAll<HTMLElement>('section[data-section-bg]'))
   const bleedPresets: Record<string, string> = {
-    subtle: '42px',
-    medium: '84px',
-    strong: '128px',
+    subtle: '3.89vh',
+    medium: '7.78vh',
+    strong: '11.85vh',
   }
 
   sections.forEach((sec) => {
