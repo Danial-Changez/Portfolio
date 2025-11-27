@@ -141,6 +141,16 @@ body {
   border-radius: clamp(999px, 4vw, 999px);
   font-size: clamp(0.95rem, 1.2vmin, 1.1rem);
 }
+
+@media (max-width: 1023px) {
+  .hero-cta {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    margin-block-start: clamp(0.75rem, 3.2vmin, 1.5rem);
+    margin-block-end: clamp(1rem, 4vmin, 2rem);
+  }
+}
 .hero-avatar {
   width: clamp(200px, 32vmin, 420px);
   height: clamp(200px, 32vmin, 420px);
@@ -154,10 +164,67 @@ body {
 .nav-link {
   color: #e5e7eb;
   transition: color 0.18s ease;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: color 0.18s ease, background 0.15s ease, box-shadow 0.18s ease;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-align: center;
+    width: 10ch;
+  }
 }
 .nav-link:hover,
 .nav-link:focus-visible {
   color: #10b981;
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 8px 22px rgba(2,6,23,0.38);
+  z-index: 40;
+}
+
+.dark .nav-link:hover,
+.dark .nav-link:focus-visible {
+  background: rgba(255,255,255,0.02);
+  box-shadow: 0 8px 22px rgba(2,6,23,0.55);
+  z-index: 40;
+}
+
+.header-btn {
+  position: relative;
+  transition: background 0.15s ease, box-shadow 0.18s ease, color 0.18s ease;
+  color: #e5e7eb;
+}
+.header-btn:hover,
+.header-btn:focus-visible {
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 8px 22px rgba(2,6,23,0.38);
+  z-index: 40;
+  color: #10b981;
+}
+.dark .header-btn:hover,
+.dark .header-btn:focus-visible {
+  background: rgba(255,255,255,0.02);
+  box-shadow: 0 8px 22px rgba(2,6,23,0.55);
+  z-index: 40;
+  color: #10b981;
+}
+
+.header-btn svg {
+  display: block;
+  fill: currentColor;
+  stroke: currentColor;
+  transition: fill 0.18s ease, stroke 0.18s ease;
+}
+
+.header-btn svg g#Dribbble-Light-Preview {
+  fill: currentColor !important;
+  transition: fill 0.18s ease;
 }
 
 .panel-frame {
@@ -454,7 +521,7 @@ body {
 }
 
 header {
-  background-color: var(--color-gradient-start) !important;
+  background-color: var(--color-bg) !important;
   border-bottom-color: transparent !important;
   border-bottom: none !important;
   box-shadow: none !important;
@@ -463,5 +530,5 @@ header {
 }
 
 footer {
-  background-color: var(--color-gradient-start);
+  background-color: var(--color-bg);
 }
