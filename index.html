@@ -11,15 +11,11 @@
   <div id="app">
     <header
       class="sticky top-0 z-40 relative backdrop-blur supports-backdrop-filter:bg-white/60 dark:supports-backdrop-filter:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/50">
-      <div class="container mx-auto px-4 panel-container">
+      <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-20">
           <a href="#home" class="font-semibold tracking-tight text-2xl">DC</a>
-          <nav
+          <nav data-nav="primary"
             class="hidden lg:flex lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:z-50 items-center gap-0 text-xl transform">
-            <a data-scroll href="#home" class="nav-link">Home</a>
-            <a data-scroll href="#skills" class="nav-link">Skills</a>
-            <a data-scroll href="#projects" class="nav-link">Projects</a>
-            <a data-scroll href="#contact" class="nav-link">Contact</a>
           </nav>
           <div class="flex items-center gap-4">
             <a href="https://github.com/Danial-Changez" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
@@ -68,19 +64,14 @@
           </div>
         </div>
       </div>
-      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-200/60 dark:border-slate-700/50">
-        <div class="container mx-auto py-2 flex flex-col justify-center gap-2">
-          <a data-scroll href="#home" class="nav-link py-2">Home</a>
-          <a data-scroll href="#skills" class="nav-link py-2">Skills</a>
-          <a data-scroll href="#projects" class="nav-link py-2">Projects</a>
-          <a data-scroll href="#contact" class="nav-link py-2">Contact</a>
-        </div>
+      <div id="mobile-menu" class="lg:hidden hidden border-t border-slate-200/60 dark:border-slate-700/50">
+        <div class="container mx-auto px-4 py-4 flex flex-col justify-center gap-2" data-nav="mobile"></div>
       </div>
     </header>
 
     <!-- Home -->
     <section id="home" class="min-h-[80vh] relative flex items-center linear-wrapper linear-bg">
-      <div class="container-section panel-container">
+      <div class="container-section">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <p class="hero-eyebrow text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 pop-in">Hello,
@@ -109,7 +100,7 @@
     <!-- Skills -->
     <section id="skills" data-section-bg="var(--color-bg)" data-bleed="medium"
       class="linear-bg-strong section-bleed py-20">
-      <div class="container-section panel-container">
+      <div class="container-section">
         <div class="section-pane pane-surface panel-frame p-6 sm:p-8">
           <div class="flex items-end justify-between gap-4">
             <div>
@@ -231,7 +222,7 @@
 
     <!-- Projects -->
     <section id="projects" data-section-bg="var(--color-bg)" data-bleed="medium" class="linear-bg section-bleed py-20">
-      <div class="container-section panel-container">
+      <div class="container-section">
         <div class="section-pane pane-surface panel-frame p-6 sm:p-8">
           <div class="flex items-end justify-between gap-4">
             <h2 class="text-2xl font-semibold">Projects</h2>
@@ -364,7 +355,7 @@
     <!-- Contact -->
     <section id="contact" data-section-bg="var(--color-bg)" data-bleed="medium"
       class="linear-bg-strong section-bleed py-20">
-      <div class="container-section panel-container">
+      <div class="container-section">
         <div class="max-w-4xl lg:max-w-5xl mx-auto space-y-6">
           <div class="section-pane pane-surface panel-frame p-6 sm:p-7 lg:p-8 space-y-5">
             <h2 class="text-2xl font-semibold">Contact</h2>

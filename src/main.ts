@@ -1,12 +1,46 @@
 import './style.css'
 
+type NavItem = { href: string; label: string }
+
+const navItems: NavItem[] = [
+  { href: '#home', label: 'Home' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
+]
+
 document.addEventListener('DOMContentLoaded', () => {
+  renderNavLinks()
   setupMobileNav()
   setupScrollSpy()
   initSectionBleeds()
   initPointerGlow()
   setupContactForm()
 })
+
+function renderNavLinks() {
+  const targets: Array<{ selector: string; extraClasses?: string[] }> = [
+    { selector: 'nav[data-nav="primary"]' },
+    { selector: '[data-nav="mobile"]', extraClasses: ['block'] },
+  ]
+
+  targets.forEach(({ selector, extraClasses = [] }) => {
+    const container = document.querySelector<HTMLElement>(selector)
+    if (!container) return
+
+    const links = navItems.map((item) => createNavLink(item, extraClasses))
+    container.replaceChildren(...links)
+  })
+}
+
+function createNavLink(item: NavItem, extraClasses: string[]) {
+  const link = document.createElement('a')
+  link.href = item.href
+  link.textContent = item.label
+  link.setAttribute('data-scroll', '')
+  link.className = ['nav-link', ...extraClasses].join(' ')
+  return link
+}
 
 function setupMobileNav() {
   const btn = document.querySelector<HTMLButtonElement>('#mobile-menu-btn')
