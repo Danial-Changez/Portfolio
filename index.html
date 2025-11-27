@@ -9,11 +9,11 @@
 <body class="page-surface text-slate-800 dark:text-slate-100">
   <div id="app">
     <header
-      class="sticky top-0 z-40 backdrop-blur supports-backdrop-filter:bg-white/60 dark:supports-backdrop-filter:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/50">
+      class="sticky top-0 z-40 relative backdrop-blur supports-backdrop-filter:bg-white/60 dark:supports-backdrop-filter:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/50">
       <div class="container mx-auto px-4 panel-container">
         <div class="flex items-center justify-between h-20">
           <a href="#home" class="font-semibold tracking-tight text-2xl">DC</a>
-          <nav class="hidden md:flex md:justify-center md:z-10 items-center gap-8 text-xl">
+          <nav class="hidden md:flex md:absolute md:left-1/2 md:-translate-x-1/2 md:z-10 items-center gap-8 text-xl transform">
             <a data-scroll href="#home" class="nav-link">Home</a>
             <a data-scroll href="#skills" class="nav-link">Skills</a>
             <a data-scroll href="#projects" class="nav-link">Projects</a>
@@ -28,7 +28,8 @@
                   clip-rule="evenodd" />
               </svg>
             </a>
-            <a href="https://linkedin.com/in/danial-changez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+            <a href="https://linkedin.com/in/danial-changez" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn"
               class="hidden sm:inline-flex rounded-md p-3 hover:bg-slate-100 dark:hover:bg-slate-800">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-10 w-10">
                 <path
@@ -46,7 +47,7 @@
         </div>
       </div>
       <div id="mobile-menu" class="md:hidden hidden border-t border-slate-200/60 dark:border-slate-700/50">
-        <div class="container mx-auto px-4 py-2 flex flex-col gap-2">
+        <div class="container mx-auto py-2 flex flex-col justify-center gap-2">
           <a data-scroll href="#home" class="py-2">Home</a>
           <a data-scroll href="#skills" class="py-2">Skills</a>
           <a data-scroll href="#projects" class="py-2">Projects</a>
@@ -55,19 +56,19 @@
       </div>
     </header>
 
-    <!-- Home (full-width gradient) -->
+    <!-- Home -->
     <section id="home" class="min-h-[80vh] relative flex items-center linear-wrapper linear-bg">
       <div class="container-section panel-container">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <p class="hero-eyebrow text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 pop-in">Hello, I'm</p>
-            <h1 class="hero-title mt-2 text-5xl sm:text-5xl font-bold leading-tight pop-in" style="animation-delay: 0.1s">
+            <p class="hero-eyebrow text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 pop-in">Hello,
+              I'm</p>
+            <h1 class="hero-title mt-2 text-5xl sm:text-5xl font-bold leading-tight pop-in"
+              style="animation-delay: 0.1s">
               Danial Changez
             </h1>
             <p class="hero-body mt-4 text-lg text-slate-600 dark:text-slate-300 pop-in" style="animation-delay: 0.2s">
-              Computer Engineering student with experience in Digital Design, Scripting, CI/CD workflows. I have worked on several
-              exciting projects, such as Tetris with a full UI in Verilog, creating a custom AXI4 IP core for a 6-bit 3x3 matrix multiplier, 
-              and transforming a simple script into a production-ready app.
+              Computer Engineering student with experience in FPGA Design, Embedded Systems, and Scripting.
             </p>
             <a href="/resume.pdf" class="hero-cta mt-6 inline-flex items-center gap-2 rounded-md button-accent pop-in"
               style="animation-delay: 0.5s" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
@@ -92,29 +93,31 @@
             <div>
               <h2 class="text-2xl font-semibold pop-in">Skills</h2>
               <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 pop-in" style="animation-delay: 0.08s">
-                Tools and languages I reach for most often.
+                Tools and languages I have experience with.
               </p>
             </div>
           </div>
           <div class="w-full px-1 sm:px-2 mt-6">
             <div class="mx-auto max-w-7xl grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-              <!-- TypeScript -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.1s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                  alt="TypeScript" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">TypeScript</span>
+              <!-- Verilog -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.85s">
+                <img src="/verilog.svg" alt="Verilog" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">Verilog</span>
               </div>
-              <!-- Tailwind CSS -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.15s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
-                  alt="Tailwind CSS" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Tailwind CSS</span>
+              <!-- VHDL -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.85s">
+                <img src="/vhdl.svg" alt="VHDL" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">VHDL</span>
               </div>
-              <!-- Vite -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.2s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite"
-                  class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Vite</span>
+              <!-- C -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.55s">
+                <img src="/c.svg" alt="C" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">C</span>
+              </div>
+              <!-- C++ -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.55s">
+                <img src="/cpp.svg" alt="C++" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">C++</span>
               </div>
               <!-- PowerShell -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.25s">
@@ -122,30 +125,54 @@
                   alt="PowerShell" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">PowerShell</span>
               </div>
+              <!-- Python -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.7s">
+                <img src="/python.svg" alt="Python" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">Python</span>
+              </div>
+              <!-- HTML -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.6s">
+                <img src="/html.svg" alt="HTML" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">HTML</span>
+              </div>
+              <!-- CSS -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.62s">
+                <img src="/css.svg" alt="CSS" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">CSS</span>
+              </div>
+              <!-- JavaScript -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.65s">
+                <img src="/javascript.svg" alt="JavaScript" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">JavaScript</span>
+              </div>
+              <!-- TypeScript -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.1s">
+                <img src="/typescript.svg" alt="TypeScript" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">TypeScript</span>
+              </div>
+              <!-- Tailwind CSS -->
+              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.15s">
+                <img src="/tailwind.svg" alt="Tailwind CSS" class="h-12 w-12 mb-2 mt-2" />
+                <span class="text-sm font-medium mt-1">Tailwind CSS</span>
+              </div>
               <!-- WPF -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.3s">
-                <div
-                  class="h-8 w-8 mb-2 flex items-center justify-center bg-white rounded p-1 text-xs font-bold text-slate-700">
-                  WPF
-                </div>
+                <img src="/wpf.svg" alt="WPF" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">WPF</span>
               </div>
               <!-- Selenium -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.35s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium"
-                  class="h-12 w-12 mb-2 mt-2" />
+                <img src="/selenium.svg" alt="Selenium" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">Selenium</span>
               </div>
               <!-- CI/CD -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.4s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg"
-                  alt="CI/CD" class="h-12 w-12 mb-2 mt-2" />
+                <img src="./cicd.svg" alt="CI/CD" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">CI/CD</span>
               </div>
               <!-- Java -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.45s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
-                  class="h-12 w-12 mb-2 mt-2" />
+                <img src="/java.svg" alt="Java" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">Java</span>
               </div>
               <!-- C# -->
@@ -154,67 +181,24 @@
                   class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">C#</span>
               </div>
-              <!-- C -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.55s">
-                <div
-                  class="h-8 w-8 mb-2 flex items-center justify-center bg-white rounded text-base font-bold text-slate-700">
-                  C
-                </div>
-                <span class="text-sm font-medium mt-1">C</span>
-              </div>
-              <!-- HTML -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.6s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"
-                  class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">HTML</span>
-              </div>
-              <!-- CSS -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.62s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"
-                  class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">CSS</span>
-              </div>
-              <!-- JavaScript -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.65s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                  alt="JavaScript" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">JavaScript</span>
-              </div>
-              <!-- Python -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.7s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
-                  class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Python</span>
-              </div>
-              <!-- Bash -->
+              <!-- Shell -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.75s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash"
-                  class="h-12 w-12 mb-2 mt-2" />
+                <img src="/shell.svg" alt="Shell" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">Bash</span>
               </div>
               <!-- .NET -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.8s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET"
-                  class="h-12 w-12 mb-2 mt-2" />
+                <img src="/dotnet.svg" alt=".NET" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">.NET</span>
-              </div>
-              <!-- VHDL -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.85s">
-                <div class="h-8 w-8 mb-2 flex items-center justify-center bg-white rounded text-xs font-bold text-slate-700">
-                  VHDL
-                </div>
-                <span class="text-sm font-medium mt-1">VHDL</span>
               </div>
               <!-- MySQL -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.9s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
-                  class="h-12 w-12 mb-2 mt-2" />
+                <img src="/mysql.svg" alt="MySQL" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">MySQL</span>
               </div>
               <!-- SQLite -->
               <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.95s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"
-                  class="h-12 w-12 mb-2 mt-2" />
+                <img src="/sqlite.svg" alt="SQLite" class="h-12 w-12 mb-2 mt-2" />
                 <span class="text-sm font-medium mt-1">SQLite</span>
               </div>
             </div>
@@ -224,8 +208,7 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" data-section-bg="var(--color-bg)" data-bleed="medium"
-      class="linear-bg section-bleed py-20">
+    <section id="projects" data-section-bg="var(--color-bg)" data-bleed="medium" class="linear-bg section-bleed py-20">
       <div class="container-section panel-container">
         <div class="section-pane pane-surface panel-frame p-6 sm:p-8">
           <div class="flex items-end justify-between gap-4">
@@ -243,8 +226,8 @@
                   <h3 class="font-medium">DONUT</h3>
                   <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
                     End-to-end PowerShell + WPF tool I built to deploy BIOS, driver and firmware updates across many
-                    machines concurrently. DONUT uses PowerShell runspaces for parallelism, provides per-device status and
-                    logging, and integrates DCU and PsExec for safe, traceable updates.
+                    machines concurrently. DONUT uses PowerShell runspaces for parallelism, provides per-device status
+                    and logging, and integrates DCU and PsExec for safe, traceable updates.
                   </p>
                   <div class="mt-3 flex gap-2">
                     <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">PowerShell</span>
@@ -276,8 +259,10 @@
                 <div class="p-4">
                   <h3 class="font-medium">Dell-BIOS-Search</h3>
                   <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    A Selenium + PowerShell workflow that scrapes Dell support pages to extract the latest BIOS versions and
-                    direct download links, compares them against deployed machines, and stages updates when necessary—helping
+                    A Selenium + PowerShell workflow that scrapes Dell support pages to extract the latest BIOS versions
+                    and
+                    direct download links, compares them against deployed machines, and stages updates when
+                    necessary—helping
                     capture critical hotfixes earlier than vendor catalog windows.
                   </p>
                   <div class="mt-3 flex gap-2">
@@ -286,8 +271,8 @@
                   </div>
                 </div>
               </a>
-              <a href="https://github.com/Danial-Changez/UofG_Schedule_Importer" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.24s">
+              <a href="https://github.com/Danial-Changez/UofG_Schedule_Importer" target="_blank"
+                rel="noopener noreferrer" class="card block group pop-in" style="animation-delay: 0.24s">
                 <div class="h-36 bg-linear-to-br from-indigo-500/20 to-emerald-400/20"></div>
                 <div class="p-4">
                   <h3 class="font-medium">PDF-ICS Semester Schedule</h3>
@@ -323,7 +308,8 @@
                 <div class="p-4">
                   <h3 class="font-medium">16-Bit MIPS CPU</h3>
                   <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Team-built CPU in VHDL supporting R/I/J instructions; 10+ modular components in Vivado, simulated 50+
+                    Team-built CPU in VHDL supporting R/I/J instructions; 10+ modular components in Vivado, simulated
+                    50+
                     cycles.
                   </p>
                   <div class="mt-3 flex gap-2">
@@ -360,7 +346,8 @@
         <div class="max-w-4xl lg:max-w-5xl mx-auto space-y-6">
           <div class="section-pane pane-surface panel-frame p-6 sm:p-7 lg:p-8 space-y-5">
             <h2 class="text-2xl font-semibold">Contact</h2>
-            <p class="text-slate-600 dark:text-slate-300">Thanks for visiting my Website! Feel free to reach out for any questions.</p>
+            <p class="text-slate-600 dark:text-slate-300">Thanks for visiting my Website! Feel free to reach out for any
+              questions.</p>
             <form id="contact-form" class="contact-grid" novalidate>
               <div class="space-y-1">
                 <label class="text-sm font-medium" for="name">Your name</label>
@@ -368,12 +355,13 @@
               </div>
               <div class="space-y-1">
                 <label class="text-sm font-medium" for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" class="input-field" required />
+                <input id="email" name="email" type="email" placeholder="you@example.com" class="input-field"
+                  required />
               </div>
               <div class="space-y-1 full-span">
                 <label class="text-sm font-medium" for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="How can I help?"
-                  class="input-field" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="How can I help?" class="input-field"
+                  required></textarea>
               </div>
               <button type="submit"
                 class="rounded-md bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-2 text-base font-semibold hover:opacity-90 full-span contact-submit">
@@ -381,7 +369,8 @@
               </button>
               <p id="contact-status" aria-live="polite"
                 class="text-sm text-slate-500 dark:text-slate-400 full-span text-center">Or reach me directly:
-                <a class="underline hover:text-slate-900 dark:hover:text-white" href="mailto:dchangez@uoguelph.ca">dchangez@uoguelph.ca</a>
+                <a class="underline hover:text-slate-900 dark:hover:text-white"
+                  href="mailto:dchangez@uoguelph.ca">dchangez@uoguelph.ca</a>
                 &bull; Guelph, ON
               </p>
             </form>
