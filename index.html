@@ -54,7 +54,7 @@
               </svg>
             </a>
             <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu"
-                class="lg:hidden rounded-md p-2 hover:bg-slate-100 dark:hover:bg-slate-800 header-btn"
+              class="lg:hidden rounded-md p-2 hover:bg-slate-100 dark:hover:bg-slate-800 header-btn"
               aria-label="Toggle menu">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="h-8 w-8">
@@ -232,51 +232,129 @@
           <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Professional and Personal</p>
           <div class="w-full px-1 sm:px-2 mt-6">
             <div class="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 gap-6 projects-grid">
-              <a href="https://github.com/Danial-Changez/DONUT" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/Danial-Changez/Tetris" target="_blank" rel="noopener noreferrer"
                 class="card block group pop-in" style="animation-delay: 0.06s">
-                <div class="h-36 bg-linear-to-br from-indigo-500/20 to-emerald-400/20"></div>
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img src="./tetris.jpg"
+                    alt="Tetris Display" class="h-full w-full object-cover" loading="lazy" />
+                </div>
+                <div class="p-4">
+                  <h3 class="font-medium">Tetris (FPGA)</h3>
+                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                    Verilog Tetris implementation with custom VGA renderer, debounced inputs, ROM fonts/titles, and XDC
+                    constraints deployed on an FPGA.
+                  </p>
+                  <div class="mt-3 flex gap-2">
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Verilog</span>
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">FPGA</span>
+                  </div>
+                </div>
+              </a>
+              <a href="https://github.com/Danial-Changez/Matrix-Multiplier-AXI4-IP" target="_blank"
+                rel="noopener noreferrer" class="card block group pop-in" style="animation-delay: 0.18s">
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img
+                    src="https://raw.githubusercontent.com/Danial-Changez/Matrix-Multiplier-AXI4-IP/main/images/block_design.png"
+                    alt="AXI4 Matrix Multiplier block design" class="h-full w-full object-cover" loading="lazy" />
+                </div>
+                <div class="p-4">
+                  <h3 class="font-medium">AXI4 Matrix Multiplier</h3>
+                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                    Zynq AXI4-Lite matrix-multiplier IP with VHDL core, testbench, block design, and C drivers for PS
+                    integration.
+                  </p>
+                  <div class="mt-3 flex gap-2">
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">VHDL</span>
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">C</span>
+                  </div>
+                </div>
+              </a>
+              <a href="https://github.com/Danial-Changez/16-Bit-MIPS-CPU" target="_blank" rel="noopener noreferrer"
+                class="card block group pop-in" style="animation-delay: 0.12s">
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img src="https://opengraph.githubassets.com/1/Danial-Changez/16-Bit-MIPS-CPU" alt="16-Bit MIPS CPU"
+                    class="h-full w-full object-cover" loading="lazy" />
+                </div>
+                <div class="p-4">
+                  <h3 class="font-medium">16-Bit MIPS CPU</h3>
+                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                    VHDL CPU implementing R/I/J instructions with modular ALU, control, registers, memory, and Vivado
+                    testbenches.
+                  </p>
+                  <div class="mt-3 flex gap-2">
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">VHDL</span>
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Assembly</span>
+                  </div>
+                </div>
+              </a>
+              <a href="https://github.com/Danial-Changez/DONUT" target="_blank" rel="noopener noreferrer"
+                class="card block group pop-in" style="animation-delay: 0.24s">
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img
+                    src="./donut.png"
+                    alt="DONUT app screenshot" class="h-full w-full object-cover" loading="lazy" />
+                </div>
                 <div class="p-4">
                   <h3 class="font-medium">DONUT</h3>
                   <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    End-to-end PowerShell + WPF tool I built to deploy BIOS, driver and firmware updates across many
-                    machines concurrently. DONUT uses PowerShell runspaces for parallelism, provides per-device status
-                    and logging, and integrates DCU and PsExec for safe, traceable updates.
+                    PowerShell + WPF updater that orchestrates BIOS/driver deployments with runspaces, logging, and
+                    configurable UI flows.
                   </p>
                   <div class="mt-3 flex gap-2">
                     <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">PowerShell</span>
                     <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">WPF</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">CI/CD</span>
+                  </div>
+                </div>
+              </a>
+                            <a href="https://github.com/Danial-Changez/UofG_Schedule_Exporter" target="_blank"
+                rel="noopener noreferrer" class="card block group pop-in" style="animation-delay: 0.6s">
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img
+                    src="https://raw.githubusercontent.com/Danial-Changez/UofG_Schedule_Exporter/main/extension/icons/logo.png"
+                    alt="UofG Schedule Exporter logo" class="h-full w-full object-cover" loading="lazy" />
+                </div>
+                <div class="p-4">
+                  <h3 class="font-medium">UofG Schedule Exporter</h3>
+                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                    Python app + Chrome extension that converts WebAdvisor schedules into ICS or Google calendars
+                    with automated tests.
+                  </p>
+                  <div class="mt-3 flex gap-2">
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Python</span>
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Selenium</span>
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">JavaScript</span>
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Shell</span>
                   </div>
                 </div>
               </a>
               <a href="https://github.com/Danial-Changez/Auto-PowerCycle" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.12s">
-                <div class="h-36 bg-linear-to-br from-indigo-500/20 to-emerald-400/20"></div>
+                class="card block group pop-in" style="animation-delay: 0.3s">
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img src="https://opengraph.githubassets.com/1/Danial-Changez/Auto-PowerCycle"
+                    alt="Auto-PowerCycle graphic" class="h-full w-full object-cover" loading="lazy" />
+                </div>
                 <div class="p-4">
                   <h3 class="font-medium">Auto-PowerCycle</h3>
                   <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    PowerShell-based event-driven script that watches Windows event logs and automatically power-cycles
-                    external monitors to resolve a persistent docking/display issue. The solution reduced manual
-                    intervention by automating the exact monitor off/on sequence after detecting Kernel-Power and Dell
-                    TechHub events.
+                    Event-driven PowerShell script that detects docking issues and toggles monitors via
+                    ControlMyMonitor to restore displays.
                   </p>
                   <div class="mt-3 flex gap-2">
                     <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">PowerShell</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Event-driven</span>
                   </div>
                 </div>
               </a>
               <a href="https://github.com/Danial-Changez/Dell-BIOS-Search" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.18s">
-                <div class="h-36 bg-linear-to-br from-indigo-500/20 to-emerald-400/20"></div>
+                class="card block group pop-in" style="animation-delay: 0.36s">
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img src="./dell-bios-search.png"
+                    alt="Dell BIOS Search graphic" class="h-full w-full object-cover" loading="lazy" />
+                </div>
                 <div class="p-4">
                   <h3 class="font-medium">Dell-BIOS-Search</h3>
                   <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    A Selenium + PowerShell workflow that scrapes Dell support pages to extract the latest BIOS versions
-                    and
-                    direct download links, compares them against deployed machines, and stages updates when
-                    necessary—helping
-                    capture critical hotfixes earlier than vendor catalog windows.
+                    PowerShell + Selenium scraper that pulls Dell BIOS versions/links, compares against inventories, and
+                    stages updates.
                   </p>
                   <div class="mt-3 flex gap-2">
                     <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">PowerShell</span>
@@ -284,65 +362,37 @@
                   </div>
                 </div>
               </a>
-              <a href="https://github.com/Danial-Changez/UofG_Schedule_Importer" target="_blank"
-                rel="noopener noreferrer" class="card block group pop-in" style="animation-delay: 0.24s">
-                <div class="h-36 bg-linear-to-br from-indigo-500/20 to-emerald-400/20"></div>
+              <a href="https://github.com/Danial-Changez/FileProcessingSystem" target="_blank" rel="noopener noreferrer"
+                class="card block group pop-in" style="animation-delay: 0.42s">
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img src="https://opengraph.githubassets.com/1/Danial-Changez/FileProcessingSystem"
+                    alt="File Processing System graphic" class="h-full w-full object-cover" loading="lazy" />
+                </div>
                 <div class="p-4">
-                  <h3 class="font-medium">PDF-ICS Semester Schedule</h3>
+                  <h3 class="font-medium">File Processing System</h3>
                   <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Automated conversions from PDF to ICS using Bash, regex, and grep with ~95% extraction accuracy;
-                    enabled import into Google/Outlook calendars.
+                    Java/Maven utility that filters and transforms large text datasets for Laserfiche ingestion.
                   </p>
                   <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Bash</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Regex</span>
+                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Java</span>
                   </div>
                 </div>
               </a>
               <a href="https://github.com/Danial-Changez/Movie-Database" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.3s">
-                <div class="h-36 bg-linear-to-br from-indigo-500/20 to-emerald-400/20"></div>
+                class="card block group pop-in" style="animation-delay: 0.48s">
+                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
+                  <img
+                    src="https://raw.githubusercontent.com/Danial-Changez/Movie-Database/master/MySQL%20Movie%20Database/Resources/FrontPic.jpg"
+                    alt="Movie Database UI" class="h-full w-full object-cover" loading="lazy" />
+                </div>
                 <div class="p-4">
                   <h3 class="font-medium">Movie Database</h3>
                   <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    C# app with MySQL backend; accelerated queries for 500+ records by ~50% and reduced user errors ~30%
-                    with improved WinForms UX.
+                    C# WinForms + MySQL app with add/search/edit flows, shared class library, and packaged solution.
                   </p>
                   <div class="mt-3 flex gap-2">
                     <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">C#</span>
                     <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">MySQL</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">WinForms</span>
-                  </div>
-                </div>
-              </a>
-              <a href="https://github.com/Danial-Changez/16-Bit-MIPS-CPU" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.36s">
-                <div class="h-36 bg-linear-to-br from-indigo-500/20 to-emerald-400/20"></div>
-                <div class="p-4">
-                  <h3 class="font-medium">16-Bit MIPS CPU</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Team-built CPU in VHDL supporting R/I/J instructions; 10+ modular components in Vivado, simulated
-                    50+
-                    cycles.
-                  </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">VHDL</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Vivado</span>
-                  </div>
-                </div>
-              </a>
-              <a href="https://github.com/Danial-Changez/FileProcessingSystem" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.42s">
-                <div class="h-36 bg-linear-to-br from-indigo-500/20 to-emerald-400/20"></div>
-                <div class="p-4">
-                  <h3 class="font-medium">File Processing System</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Java app to process API and local data (1000+ records); optimized JSON parsing/sorting to cut
-                    processing time ~15%.
-                  </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Java</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">JSON</span>
                   </div>
                 </div>
               </a>
