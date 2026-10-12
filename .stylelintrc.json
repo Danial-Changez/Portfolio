@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "import-notation": "string",
+    "at-rule-no-unknown": [true, { "ignoreAtRules": ["custom-variant", "theme", "slot"] }],
+    "at-rule-prelude-no-invalid": [true, { "ignoreAtRules": ["apply"] }],
+    "nesting-selector-no-missing-scoping-root": [true, { "ignoreAtRules": ["custom-variant"] }]
+  }
+}

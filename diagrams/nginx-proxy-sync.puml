@@ -1,0 +1,28 @@
+@startuml nginx-proxy-sync
+' Logos in icons/ are from Simple Icons 16.33.0 (CC0), filled white for the brand-coloured tiles.
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName sans-serif
+skinparam defaultFontSize 17
+skinparam defaultFontStyle bold
+skinparam defaultTextAlignment center
+skinparam ArrowColor #8A8A8A
+skinparam ArrowThickness 2
+skinparam RectangleBorderThickness 0
+skinparam RectangleFontColor #FFFFFF
+skinparam RoundCorner 18
+skinparam nodesep 36
+skinparam ranksep 64
+left to right direction
+
+rectangle "<img:icons/docker.svg{scale=1.7}>\nDocker" as docker #2496ED
+rectangle "<img:icons/truenas.svg{scale=1.7}>\nTrueNAS" as truenas #0095D5
+rectangle "<img:icons/sync.svg{scale=1.7}>\nProxy Sync" as sync #059669
+rectangle "<img:icons/nginxproxymanager.svg{scale=1.7}>\nNPM" as npm #F15833
+rectangle "<img:icons/pihole.svg{scale=1.7}>\nPi-hole" as pihole #96060C
+
+docker --> sync
+truenas --> sync
+sync --> npm
+sync --> pihole
+@enduml

@@ -1,468 +1,321 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light dark" />
-  <title>Danial Changez</title>
-  <link rel="icon" type="image/x-icon" href="./favicon.png" />
-</head>
-<body class="page-surface text-slate-800 dark:text-slate-100">
-  <div id="app">
-    <header
-      class="sticky top-0 z-40 relative backdrop-blur supports-backdrop-filter:bg-white/60 dark:supports-backdrop-filter:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/50">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between h-20">
-          <a href="#home" class="font-semibold tracking-tight text-2xl">DC</a>
-          <nav data-nav="primary"
-            class="hidden lg:flex lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:z-50 items-center gap-0 text-xl transform">
+<!doctype html>
+<html lang="en" class="motion-safe:scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Danial Changez</title>
+    <meta
+      name="description"
+      content="Computer Engineering co-op student at the University of Guelph, looking for a May to August 2027 software internship."
+    />
+    <meta property="og:title" content="Danial Changez" />
+    <meta
+      property="og:description"
+      content="Computer Engineering co-op student at the University of Guelph, looking for a May to August 2027 software internship."
+    />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body class="bg-page text-fg antialiased">
+    <div class="mx-auto max-w-3xl px-6">
+      <header class="flex items-center justify-between py-6 text-sm">
+        <a href="#home" class="font-semibold text-heading">DC</a>
+        <div class="flex items-center gap-5 sm:gap-7">
+          <nav aria-label="Primary" class="flex gap-5 text-muted sm:gap-7">
+            <a href="#experience" class="hover:text-heading">Experience</a>
+            <a href="#projects" class="hover:text-heading">Projects</a>
+            <a href="#skills" class="hover:text-heading">Skills</a>
           </nav>
-          <div class="flex items-center gap-4">
-            <a href="https://github.com/Danial-Changez" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-              class="inline-flex rounded-md p-2 hover:bg-slate-100 dark:hover:bg-slate-800 header-btn">
-              <svg class="h-8 w-8" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#e5e7eb">
-                    <g id="icons" transform="translate(56.000000, 160.000000)">
-                      <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762
-                      96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656
-                      100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977
-                      96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252
-                      88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526
-                      92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319
-                      87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2
-                      91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783
-                      84,7409.253 C84,7403.59 88.478,7399 94,7399" />
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </a>
-            <a href="https://linkedin.com/in/danial-changez" target="_blank" rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              class="inline-flex rounded-md p-2 hover:bg-slate-100 dark:hover:bg-slate-800 header-btn">
-              <svg class="h-8 w-8" viewBox="0 0 382 382" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889
-	                        C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056
-                          H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806
-                          c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1
-                          s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73
-                          c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079
-                          c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426
-                          c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472
-                          L341.91,330.654L341.91,330.654z" />
-              </svg>
-            </a>
-            <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu"
-              class="lg:hidden rounded-md p-2 hover:bg-slate-100 dark:hover:bg-slate-800 header-btn"
-              aria-label="Toggle menu">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="h-8 w-8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
-              </svg>
-            </button>
-          </div>
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle colour theme"
+            class="text-muted hover:text-heading"
+          >
+            <svg viewBox="0 0 24 24" class="size-[18px]" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" />
+            </svg>
+          </button>
         </div>
-      </div>
-      <div id="mobile-menu" class="lg:hidden hidden border-t border-slate-200/60 dark:border-slate-700/50">
-        <div class="container mx-auto px-4 py-4 flex flex-col justify-center gap-2" data-nav="mobile"></div>
-      </div>
-    </header>
+      </header>
 
-    <!-- Home -->
-    <section id="home" class="min-h-[80vh] relative flex items-center linear-wrapper linear-bg">
-      <div class="container-section">
-        <div class="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <p class="hero-eyebrow text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 pop-in">Hello,
-              I'm</p>
-            <h1 class="hero-title mt-2 text-5xl sm:text-5xl font-bold leading-tight pop-in"
-              style="animation-delay: 0.1s">
-              Danial Changez
-            </h1>
-            <p class="hero-body mt-4 text-lg text-slate-600 dark:text-slate-300 pop-in" style="animation-delay: 0.2s">
-              Computer Engineering student with experience in FPGA Design, Embedded Systems, and Scripting.
-            </p>
-            <a href="/resume.pdf" class="hero-cta mt-6 inline-flex items-center gap-2 rounded-md button-accent pop-in"
-              style="animation-delay: 0.5s" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+      <main>
+        <section id="home" class="pt-16 pb-20 sm:pt-28 sm:pb-24">
+          <h1 class="text-5xl font-semibold tracking-tight text-heading sm:text-6xl">
+            Danial Changez
+          </h1>
+          <p class="mt-6 max-w-[58ch] text-lg leading-relaxed text-muted">
+            Computer Engineering co-op student at the University of Guelph. I build internal tools
+            at The Co-operators and moved them to Azure Kubernetes Service. I'm looking for a
+            software internship for May to August 2027.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3 text-sm">
+            <a href="https://github.com/Danial-Changez" target="_blank" class="pill"
+              ><svg viewBox="0 0 24 24" class="size-4" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                /></svg
+              >GitHub</a
+            >
+            <a href="https://linkedin.com/in/danial-changez" target="_blank" class="pill"
+              ><svg viewBox="0 0 382 382" class="size-4" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"
+                /></svg
+              >LinkedIn</a
+            >
           </div>
-          <div class="flex justify-center lg:justify-end pop-in" style="animation-delay: 0.2s">
-            <div class="hero-avatar rounded-full avatar-frame p-1">
-              <div class="h-full w-full rounded-full overflow-hidden bg-white dark:bg-slate-900">
-                <img src="/pfp.jpg" alt="Profile photo" class="h-full w-full object-cover object-center block" />
+        </section>
+
+        <section id="experience" class="border-t border-line py-14">
+          <h2 class="label">Experience</h2>
+          <div class="mt-8 flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 class="text-lg font-semibold text-heading">The Co-operators</h3>
+            <p class="text-sm text-muted">Guelph, ON</p>
+          </div>
+          <div class="mt-6 space-y-10">
+            <article>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+                <h4 class="font-medium text-heading">Software Engineer Intern</h4>
+                <p class="text-sm text-muted">Jun 2026 – Present</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" data-section-bg="var(--color-bg)" data-bleed="medium"
-      class="linear-bg-strong section-bleed py-20">
-      <div class="container-section">
-        <div class="section-pane pane-surface panel-frame p-6 sm:p-8">
-          <div class="flex items-end justify-between gap-4">
-            <div>
-              <h2 class="text-2xl font-semibold pop-in">Skills</h2>
-              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 pop-in" style="animation-delay: 0.08s">
-                Tools and languages I have experience with.
+              <ul class="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed marker:text-muted">
+                <li>
+                  Built a PowerShell and WPF app that 2 teams use to manage 10,000+ Windows devices,
+                  running each remote update in its own worker process.
+                </li>
+                <li>
+                  Developed a cross-platform C# and Avalonia app tracking nearly 1,000 device
+                  pick-ups and returns at the Guelph HQ, with unit, integration and UI test layers.
+                </li>
+                <li>
+                  Migrated the team's tools from a single Windows laptop to Azure Kubernetes
+                  Service.
+                </li>
+              </ul>
+              <p class="mt-3 text-sm text-muted">
+                C# · PowerShell · WPF · Avalonia · GitHub Actions · Docker · Kubernetes · Azure
               </p>
-            </div>
+            </article>
+            <article>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+                <h4 class="font-medium text-heading">Technical Support Analyst Intern</h4>
+                <p class="text-sm text-muted">Jan 2025 – Aug 2025</p>
+              </div>
+              <ul class="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed marker:text-muted">
+                <li>
+                  Built a remote driver-update tool for the support team that ran updates in
+                  parallel for up to 3× throughput, adopted by 30+ analysts.
+                </li>
+                <li>
+                  Eliminated a 60-day lag in fleet BIOS updates by automating Dell BIOS lookups with
+                  Selenium.
+                </li>
+                <li>
+                  Resolved 75+ Level 2 Windows and macOS tickets a month with 90%+ SLA compliance on
+                  response and resolution time.
+                </li>
+              </ul>
+              <p class="mt-3 text-sm text-muted">PowerShell · WPF · Python · Selenium</p>
+            </article>
           </div>
-          <div class="w-full px-1 sm:px-2 mt-6">
-            <div class="mx-auto max-w-7xl grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-              <!-- Verilog -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.85s">
-                <img src="/verilog.svg" alt="Verilog" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Verilog</span>
-              </div>
-              <!-- VHDL -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.85s">
-                <img src="/vhdl.svg" alt="VHDL" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">VHDL</span>
-              </div>
-              <!-- C -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.55s">
-                <img src="/c.svg" alt="C" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">C</span>
-              </div>
-              <!-- C++ -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.55s">
-                <img src="/cpp.svg" alt="C++" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">C++</span>
-              </div>
-              <!-- PowerShell -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.25s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg"
-                  alt="PowerShell" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">PowerShell</span>
-              </div>
-              <!-- Python -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.7s">
-                <img src="/python.svg" alt="Python" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Python</span>
-              </div>
-              <!-- HTML -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.6s">
-                <img src="/html.svg" alt="HTML" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">HTML</span>
-              </div>
-              <!-- CSS -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.62s">
-                <img src="/css.svg" alt="CSS" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">CSS</span>
-              </div>
-              <!-- JavaScript -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.65s">
-                <img src="/javascript.svg" alt="JavaScript" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">JavaScript</span>
-              </div>
-              <!-- TypeScript -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.1s">
-                <img src="/typescript.svg" alt="TypeScript" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">TypeScript</span>
-              </div>
-              <!-- Tailwind CSS -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.15s">
-                <img src="/tailwind.svg" alt="Tailwind CSS" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Tailwind CSS</span>
-              </div>
-              <!-- Java -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.45s">
-                <img src="/java.svg" alt="Java" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Java</span>
-              </div>
-              <!-- C# -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.5s">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"
-                  class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">C#</span>
-              </div>
-              <!-- Shell -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.75s">
-                <img src="/shell.svg" alt="Shell" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Shell</span>
-              </div>
-              <!-- .NET -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.8s">
-                <img src="/dotnet.svg" alt=".NET" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">.NET</span>
-              </div>
-              <!-- WPF -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.3s">
-                <img src="/wpf.svg" alt="WPF" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">WPF</span>
-              </div>
-              <!-- Selenium -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.35s">
-                <img src="/selenium.svg" alt="Selenium" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Selenium</span>
-              </div>
-              <!-- Pytest -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.35s">
-                <img src="/pytest.svg" alt="Pytest" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Pytest</span>
-              </div>
-              <!-- Mocha -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.35s">
-                <img src="/mocha.svg" alt="Mocha" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Mocha</span>
-              </div>
-              <!-- Chai -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.35s">
-                <img src="/chai.svg" alt="Chai" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">Chai</span>
-              </div>
-              <!-- CI/CD -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.4s">
-                <img src="./cicd.svg" alt="CI/CD" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">CI/CD</span>
-              </div>
-              <!-- MySQL -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.9s">
-                <img src="/mysql.svg" alt="MySQL" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">MySQL</span>
-              </div>
-              <!-- SQLite -->
-              <div class="card skill-card pop-in p-4 flex flex-col items-center" style="animation-delay: 0.95s">
-                <img src="/sqlite.svg" alt="SQLite" class="h-12 w-12 mb-2 mt-2" />
-                <span class="text-sm font-medium mt-1">SQLite</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Projects -->
-    <section id="projects" data-section-bg="var(--color-bg)" data-bleed="medium" class="linear-bg section-bleed py-20">
-      <div class="container-section">
-        <div class="section-pane pane-surface panel-frame p-6 sm:p-8">
-          <div class="flex items-end justify-between gap-4">
-            <h2 class="text-2xl font-semibold">Projects</h2>
-            <a href="https://github.com/Danial-Changez" target="_blank" rel="noopener"
-              class="text-sm text-slate-600 dark:text-slate-300 hover:underline">View all</a>
-          </div>
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Professional and Personal</p>
-          <div class="w-full px-1 sm:px-2 mt-6">
-            <div class="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 gap-6 projects-grid">
-              <a href="https://github.com/Danial-Changez/Tetris" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.06s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="./tetris.jpg" alt="Tetris Display" class="h-full w-full object-cover" loading="lazy" />
+        <section id="projects" class="border-t border-line py-14">
+          <h2 class="label">Projects</h2>
+          <ul class="mt-4 divide-y divide-line">
+            <li>
+              <a
+                href="https://github.com/Danial-Changez/Nginx-Proxy-Sync"
+                target="_blank"
+                class="project group"
+              >
+                <div class="thumb">
+                  <img
+                    src="/projects/nginx-proxy-sync.svg"
+                    alt="Docker and TrueNAS feeding proxy-sync, which updates Nginx Proxy Manager (NPM) and Pi-hole"
+                    class="size-full object-contain p-3"
+                    loading="lazy"
+                  />
                 </div>
-                <div class="p-4">
-                  <h3 class="font-medium">Tetris (RTL)</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Verilog Tetris implementation with custom VGA renderer, debounced inputs, ROM fonts/titles, and XDC
-                    constraints deployed on an FPGA.
+                <div class="min-w-0">
+                  <h3 class="ext font-medium text-heading group-hover:text-accent">
+                    Nginx Proxy Sync
+                  </h3>
+                  <p class="mt-1.5 leading-relaxed">
+                    Python service that keeps reverse-proxy routes and DNS records in sync with
+                    Docker containers and TrueNAS apps, without touching routes added by hand.
                   </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Verilog</span>
-                  </div>
+                  <p class="mt-2 text-sm text-muted">Python · Docker · REST APIs</p>
                 </div>
               </a>
-              <a href="https://github.com/Danial-Changez/Matrix-Multiplier-AXI4-IP" target="_blank"
-                rel="noopener noreferrer" class="card block group pop-in" style="animation-delay: 0.18s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="./matrix_multiplier.png" alt="AXI4 Matrix Multiplier block design"
-                    class="h-full w-full object-cover" loading="lazy" />
+            </li>
+            <li>
+              <a
+                href="https://github.com/Danial-Changez/Tetris"
+                target="_blank"
+                class="project group"
+              >
+                <div class="thumb">
+                  <img
+                    src="/projects/tetris.jpg"
+                    alt="Tetris title menu on a monitor"
+                    class="size-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-                <div class="p-4">
-                  <h3 class="font-medium">AXI4 Matrix Multiplier IP</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Zynq AXI4-Lite matrix-multiplier IP with VHDL core, testbench, block design, and C drivers for
-                    processing system integration.
+                <div class="min-w-0">
+                  <h3 class="ext font-medium text-heading group-hover:text-accent">FPGA Tetris</h3>
+                  <p class="mt-1.5 leading-relaxed">
+                    Tetris in Verilog on a Nexys A7 with a custom 640×480 VGA renderer, save slots
+                    and a high-score table, meeting timing at 50 MHz.
                   </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">VHDL</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">C</span>
-                  </div>
+                  <p class="mt-2 text-sm text-muted">Verilog · Vivado</p>
                 </div>
               </a>
-              <a href="https://github.com/Danial-Changez/16-Bit-MIPS-CPU" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.12s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="./mips_cpu.png" alt="16-Bit MIPS CPU" class="h-full w-full object-cover" loading="lazy" />
+            </li>
+            <li>
+              <a
+                href="https://github.com/Danial-Changez/Matrix-Multiplier-AXI4-IP"
+                target="_blank"
+                class="project group"
+              >
+                <div class="thumb">
+                  <img
+                    src="/projects/matrix-multiplier-light.webp"
+                    alt="Vivado block design with the matrix multiplier and the Zynq processing system"
+                    class="size-full object-contain dark:hidden"
+                    loading="lazy"
+                  />
+                  <img
+                    src="/projects/matrix-multiplier-dark.webp"
+                    alt="Vivado block design with the matrix multiplier and the Zynq processing system"
+                    class="hidden size-full object-contain dark:block"
+                    loading="lazy"
+                  />
                 </div>
-                <div class="p-4">
-                  <h3 class="font-medium">16-Bit MIPS CPU</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    VHDL CPU implementing R/I/J instructions with modular ALU, control, registers, memory, and Vivado
-                    testbenches.
+                <div class="min-w-0">
+                  <h3 class="ext font-medium text-heading group-hover:text-accent">
+                    Matrix Multiplier IP
+                  </h3>
+                  <p class="mt-1.5 leading-relaxed">
+                    3×3 matrix multiplier in VHDL, packaged as an AXI4-Lite peripheral for the
+                    Zynq-7000 on a ZedBoard and driven by a bare-metal C program on its ARM core.
                   </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">VHDL</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">MIPS</span>
-                  </div>
+                  <p class="mt-2 text-sm text-muted">VHDL · C · Zynq</p>
                 </div>
               </a>
-              <a href="https://github.com/Danial-Changez/DONUT" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.24s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="./donut.png" alt="DONUT app screenshot" class="h-full w-full object-cover" loading="lazy" />
+            </li>
+            <li>
+              <a
+                href="https://github.com/Danial-Changez/UofG_Schedule_Exporter"
+                target="_blank"
+                class="project group"
+              >
+                <div class="thumb">
+                  <img
+                    src="/projects/schedule-exporter.svg"
+                    alt=""
+                    class="size-full object-contain p-3"
+                    loading="lazy"
+                  />
                 </div>
-                <div class="p-4">
-                  <h3 class="font-medium">DONUT</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    PowerShell and WPF updater that parallelizes BIOS/driver/firmware/application deployments with
-                    runspaces, logging, and configurable UI flows.
+                <div class="min-w-0">
+                  <h3 class="ext font-medium text-heading group-hover:text-accent">
+                    UofG Schedule Exporter
+                  </h3>
+                  <p class="mt-1.5 leading-relaxed">
+                    Chrome extension and Python app that export a University of Guelph class
+                    schedule to Google Calendar, Outlook or an ICS file.
                   </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">PowerShell</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">WPF</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">CI/CD</span>
-                  </div>
+                  <p class="mt-2 text-sm text-muted">Python · JavaScript · Selenium</p>
                 </div>
               </a>
-              <a href="https://github.com/Danial-Changez/UofG_Schedule_Exporter" target="_blank"
-                rel="noopener noreferrer" class="card block group pop-in" style="animation-delay: 0.6s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="./schedule_exporter.svg" alt="UofG Schedule Exporter logo"
-                    class="h-full w-full object-cover" loading="lazy" />
+            </li>
+            <li>
+              <a
+                href="https://github.com/Danial-Changez/16-Bit-MIPS-CPU"
+                target="_blank"
+                class="project group"
+              >
+                <div class="thumb">
+                  <img
+                    src="/projects/mips-cpu-light.webp"
+                    alt="CPU datapath with the jump and branch units feeding the program counter"
+                    class="size-full object-contain dark:hidden"
+                    loading="lazy"
+                  />
+                  <img
+                    src="/projects/mips-cpu-dark.webp"
+                    alt="CPU datapath with the jump and branch units feeding the program counter"
+                    class="hidden size-full object-contain dark:block"
+                    loading="lazy"
+                  />
                 </div>
-                <div class="p-4">
-                  <h3 class="font-medium">UofG Schedule Exporter</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Python app with Chrome extension variant that converts WebAdvisor schedules into ICS or Google
-                    calendars
-                    with automated tests.
+                <div class="min-w-0">
+                  <h3 class="ext font-medium text-heading group-hover:text-accent">
+                    16-Bit MIPS CPU
+                  </h3>
+                  <p class="mt-1.5 leading-relaxed">
+                    A single-cycle 16-bit MIPS-style CPU in VHDL with branch and jump instructions,
+                    built with a course team and verified by a self-checking testbench under GHDL in
+                    CI.
                   </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Python</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Selenium</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">JavaScript</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Shell</span>
-                  </div>
+                  <p class="mt-2 text-sm text-muted">VHDL · GHDL</p>
                 </div>
               </a>
-              <a href="https://github.com/Danial-Changez/Dell-BIOS-Search" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.36s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="./dell-bios-search.png" alt="Dell BIOS Search graphic" class="h-full w-full object-cover"
-                    loading="lazy" />
-                </div>
-                <div class="p-4">
-                  <h3 class="font-medium">Dell BIOS Search</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    PowerShell and Selenium web scraper that pulls Dell BIOS versions/links, compares against inventory,
-                    and stages updates.
-                  </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">PowerShell</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Selenium</span>
-                  </div>
-                </div>
-              </a>
-              <a href="https://github.com/Danial-Changez/Auto-PowerCycle" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.3s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="./auto_powercycle.png" alt="Auto-PowerCycle graphic" class="h-full w-full object-cover"
-                    loading="lazy" />
-                </div>
-                <div class="p-4">
-                  <h3 class="font-medium">Auto-PowerCycle</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    PowerShell script monitoring Windows Event Logs for events
-                    causing secondary monitors to go black, then power-cycles the display with the
-                    ControlMyMonitor utility.
-                  </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">PowerShell</span>
-                  </div>
-                </div>
-              </a>
-              <a href="https://github.com/Danial-Changez/Movie-Database" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.48s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="./movie_database.png" alt="Movie Database UI" class="h-full w-full object-cover"
-                    loading="lazy" />
-                </div>
-                <div class="p-4">
-                  <h3 class="font-medium">Movie Database</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    C# and WinForms app with add/search/edit flows to update a MySQL database.
-                  </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">C#</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">WinForms</span>
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">MySQL</span>
-                  </div>
-                </div>
-              </a>
-              <a href="https://github.com/Danial-Changez/FileProcessingSystem" target="_blank" rel="noopener noreferrer"
-                class="card block group pop-in" style="animation-delay: 0.42s">
-                <div class="aspect-video w-full overflow-hidden bg-slate-900/10 dark:bg-slate-100/10">
-                  <img src="https://opengraph.githubassets.com/1/Danial-Changez/FileProcessingSystem"
-                    alt="File Processing System graphic" class="h-full w-full object-cover" loading="lazy" />
-                </div>
-                <div class="p-4">
-                  <h3 class="font-medium">File Processing System</h3>
-                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Java application that filters and transforms large text datasets.
-                  </p>
-                  <div class="mt-3 flex gap-2">
-                    <span class="rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs">Java</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            </li>
+          </ul>
+          <a
+            href="https://github.com/Danial-Changez"
+            target="_blank"
+            class="ext mt-4 inline-block text-sm text-muted hover:text-heading"
+            >All projects on GitHub</a
+          >
+        </section>
 
-    <!-- Contact -->
-    <section id="contact" data-section-bg="var(--color-bg)" data-bleed="medium"
-      class="linear-bg-strong section-bleed py-20">
-      <div class="container-section">
-        <div class="max-w-4xl lg:max-w-5xl mx-auto space-y-6">
-          <div class="section-pane pane-surface panel-frame p-6 sm:p-7 lg:p-8 space-y-5">
-            <h2 class="text-2xl font-semibold">Contact</h2>
-            <p class="text-slate-600 dark:text-slate-300">Thanks for visiting my Website! Feel free to reach out with
-              any
-              questions.</p>
-            <form id="contact-form" class="contact-grid" novalidate>
-              <div class="space-y-1">
-                <label class="text-sm font-medium" for="name">Your name</label>
-                <input id="name" name="name" type="text" placeholder="John Smith" class="input-field" required />
-              </div>
-              <div class="space-y-1">
-                <label class="text-sm font-medium" for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" class="input-field"
-                  required />
-              </div>
-              <div class="space-y-1 full-span">
-                <label class="text-sm font-medium" for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="How can I help?" class="input-field"
-                  required></textarea>
-              </div>
-              <button type="submit"
-                class="button-accent full-span contact-submit inline-flex items-center justify-center text-base font-semibold">
-                Send message
-              </button>
-              <p id="contact-status" aria-live="polite"
-                class="text-sm text-slate-500 dark:text-slate-400 full-span text-center">Or reach me directly:
-                <a class="underline hover:text-slate-900 dark:hover:text-white"
-                  href="mailto:dchangez@uoguelph.ca">dchangez@uoguelph.ca</a>
-                &bull; Guelph, ON
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+        <section id="skills" class="border-t border-line py-14">
+          <h2 class="label">Skills</h2>
+          <dl class="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-[7rem_1fr]">
+            <dt class="font-medium text-heading">Languages</dt>
+            <dd class="mb-2 sm:mb-0">C#, Python, C/C++, Java, PowerShell, TypeScript, SQL</dd>
+            <dt class="font-medium text-heading">Frameworks</dt>
+            <dd class="mb-2 sm:mb-0">.NET, WPF, Avalonia, xUnit, Pester, Selenium, Mocha</dd>
+            <dt class="font-medium text-heading">Tools</dt>
+            <dd class="mb-2 sm:mb-0">
+              Git, GitHub Actions, Docker, Kubernetes, Azure, Linux, Active Directory
+            </dd>
+            <dt class="font-medium text-heading">Hardware</dt>
+            <dd>Verilog, VHDL, Vivado, Zynq</dd>
+          </dl>
+        </section>
+      </main>
 
-    <footer
-      class="py-8 border-t border-slate-200 dark:border-slate-700 text-center text-sm text-slate-600 dark:text-slate-400">
-      &copy; <span id="year"></span> Danial Changez
-    </footer>
-  </div>
+      <footer
+        class="flex flex-wrap items-center justify-between gap-4 border-t border-line py-10 text-sm text-muted"
+      >
+        <p>&copy; Danial Changez</p>
+        <nav id="contact" aria-label="Contact" class="flex gap-6">
+          <a data-email class="hover:text-heading">Email</a>
+          <a href="https://github.com/Danial-Changez" target="_blank" class="hover:text-heading"
+            >GitHub</a
+          >
+          <a
+            href="https://linkedin.com/in/danial-changez"
+            target="_blank"
+            class="hover:text-heading"
+            >LinkedIn</a
+          >
+        </nav>
+      </footer>
+    </div>
 
-  <script type="module" src="/src/main.ts"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

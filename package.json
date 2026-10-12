@@ -6,17 +6,26 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings 0",
+    "lint:css": "stylelint \"src/**/*.css\" --max-warnings 0",
+    "lint:html": "html-validate index.html public/404.html",
+    "test": "node --test"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "typescript": "~5.8.3",
-    "vite": "^7.1.2"
-  },
-  "dependencies": {
-    "@tailwindcss/postcss": "^4.1.12",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.1.12",
-    "autoprefixer": "^10.4.21",
-    "tailwindcss": "^4.1.12"
+    "eslint": "^10.12.0",
+    "html-validate": "^11.16.2",
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
+    "tailwindcss": "^4.1.12",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.71.1",
+    "vite": "^7.1.2"
   }
 }
