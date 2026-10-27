@@ -4,36 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfcfb" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0e0d" />
     <meta name="referrer" content="no-referrer" />
     <title>Danial Changez</title>
     <meta
       name="description"
-      content="Computer Engineering co-op student at the University of Guelph, looking for a May to August 2027 software internship."
+      content="Danial Changez builds internal tools, REST APIs and embedded systems. Open to Summer 2027 internships, May to August."
     />
     <meta property="og:title" content="Danial Changez" />
     <meta
       property="og:description"
-      content="Computer Engineering co-op student at the University of Guelph, looking for a May to August 2027 software internship."
+      content="Danial Changez builds internal tools, REST APIs and embedded systems. Open to Summer 2027 internships, May to August."
     />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap"
+    />
   </head>
-  <body class="bg-page text-fg antialiased">
-    <div class="mx-auto max-w-3xl px-6">
-      <header class="flex items-center justify-between py-6 text-sm">
-        <a href="#home" class="font-semibold text-heading">DC</a>
-        <div class="flex items-center gap-5 sm:gap-7">
-          <nav aria-label="Primary" class="flex gap-5 text-muted sm:gap-7">
-            <a href="#experience" class="hover:text-heading">Experience</a>
+  <body class="bg-page leading-relaxed text-fg antialiased">
+    <div class="mx-auto max-w-[70rem] px-5">
+      <header class="flex items-center justify-between py-6 text-[0.9375rem]">
+        <a href="#home" class="font-bold tracking-tight text-heading">Danial Changez</a>
+        <div class="flex items-center gap-6 sm:gap-7">
+          <nav aria-label="Primary" class="flex gap-6 text-muted sm:gap-7">
+            <a href="#work" class="hover:text-heading">Work</a>
             <a href="#projects" class="hover:text-heading">Projects</a>
-            <a href="#skills" class="hover:text-heading">Skills</a>
           </nav>
           <button
             id="theme-toggle"
             type="button"
             aria-label="Toggle colour theme"
-            class="text-muted hover:text-heading"
+            class="cursor-pointer text-muted hover:text-heading"
           >
             <svg viewBox="0 0 24 24" class="size-[18px]" aria-hidden="true">
               <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
@@ -44,278 +49,251 @@
       </header>
 
       <main>
-        <section id="home" class="pt-16 pb-20 sm:pt-28 sm:pb-24">
-          <h1 class="text-5xl font-semibold tracking-tight text-heading sm:text-6xl">
+        <section id="home" class="grid gap-7 pt-10 pb-14 sm:pt-16 sm:pb-16">
+          <p class="status">Open to Summer 2027 internships · May–Aug</p>
+          <h1
+            class="text-[clamp(2.75rem,7vw,4.75rem)] leading-none font-extrabold tracking-[-0.035em] text-heading"
+          >
             Danial Changez
           </h1>
-          <p class="mt-6 max-w-[58ch] text-lg leading-relaxed text-muted">
-            Computer Engineering co-op student at the University of Guelph. I build internal tools
-            at The Co-operators and moved them to Azure Kubernetes Service. I'm looking for a
-            software internship for May to August 2027.
+          <p
+            class="max-w-[40ch] text-[clamp(1.5rem,3vw,2rem)] leading-tight font-medium tracking-[-0.02em] text-balance text-heading"
+          >
+            I build internal tools, REST&nbsp;APIs and
+            <span class="text-accent">embedded systems</span>.
           </p>
-          <div class="mt-8 flex flex-wrap items-center gap-3 text-sm">
-            <a href="https://github.com/Danial-Changez" target="_blank" class="pill"
-              ><svg viewBox="0 0 24 24" class="size-4" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                /></svg
-              >GitHub</a
-            >
-            <a href="https://linkedin.com/in/danial-changez" target="_blank" class="pill"
-              ><svg viewBox="0 0 382 382" class="size-4" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"
-                /></svg
+          <div class="flex flex-wrap gap-2.5 text-[0.9375rem]">
+            <a data-email class="btn btn-primary">Email</a>
+            <a href="https://github.com/Danial-Changez" target="_blank" class="btn">GitHub</a>
+            <a href="https://linkedin.com/in/danial-changez" target="_blank" class="btn"
               >LinkedIn</a
             >
           </div>
         </section>
 
-        <section id="experience" class="border-t border-line py-14">
-          <h2 class="label">Experience</h2>
-          <div class="mt-8 flex flex-wrap items-baseline justify-between gap-x-4">
-            <h3 class="text-lg font-semibold text-heading">The Co-operators</h3>
-            <p class="text-sm text-muted">Guelph, ON</p>
+        <section id="work" class="band pb-0">
+          <div class="sec-head">
+            <h2>Work</h2>
+            <p class="font-mono text-[0.8125rem] text-muted">The Co-operators · Guelph, ON</p>
           </div>
-          <div class="mt-6 space-y-10">
-            <article>
-              <div class="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h4 class="font-medium text-heading">Software Engineer Intern</h4>
-                <p class="text-sm text-muted">Jun 2026 – Present</p>
-              </div>
-              <ul class="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed marker:text-muted">
-                <li>
-                  Built an ASP.NET Core REST API with Entra ID sign-in for the inventory app, moving
-                  its records, secrets, ServiceNow and Microsoft Graph calls off analyst machines.
-                </li>
-                <li>
-                  Designed and deployed the team's move from a single Windows laptop to Azure
-                  Kubernetes Service, writing the base Docker image and per-environment namespaces.
-                </li>
-                <li>
-                  Developed a cross-platform C# and Avalonia app tracking 1,000+ device pick-ups and
-                  returns at the Guelph HQ, with unit, integration and UI test layers.
-                </li>
-                <li>
-                  Built a PowerShell and WPF app that 2 teams use to manage 10,000+ Windows devices,
-                  running each remote update in its own worker process.
-                </li>
-              </ul>
-              <p class="mt-3 text-sm text-muted">
-                C# · ASP.NET Core · Entra ID · Docker · Kubernetes · Azure · Avalonia · PowerShell ·
-                WPF · GitHub Actions
+          <article class="role">
+            <p class="when">Jun 2026 – Present</p>
+            <div>
+              <h3>Software Engineer Intern</h3>
+              <p>
+                Designed and built a REST API on Azure Kubernetes Service and tools that manage
+                10,000+ Windows devices.
               </p>
-            </article>
-            <article>
-              <div class="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h4 class="font-medium text-heading">Technical Support Analyst Intern</h4>
-                <p class="text-sm text-muted">Jan 2025 – Aug 2025</p>
-              </div>
-              <ul class="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed marker:text-muted">
-                <li>
-                  Built a remote driver-update tool for the support team that ran updates in
-                  parallel for up to 3× throughput, adopted by 30+ analysts.
-                </li>
-                <li>
-                  Eliminated a 60-day lag in fleet BIOS updates by automating Dell BIOS lookups with
-                  Selenium.
-                </li>
-                <li>
-                  Resolved 75+ Level 2 Windows and macOS tickets a month with 90%+ SLA compliance on
-                  response and resolution time.
-                </li>
+              <ul class="chips" aria-label="Skills">
+                <li class="chip">ASP.NET Core</li>
+                <li class="chip">Entra ID</li>
+                <li class="chip">Kubernetes</li>
+                <li class="chip">Docker</li>
+                <li class="chip">C#</li>
+                <li class="chip">Avalonia</li>
+                <li class="chip">PowerShell</li>
               </ul>
-              <p class="mt-3 text-sm text-muted">PowerShell · WPF · Python · Selenium</p>
-            </article>
+            </div>
+          </article>
+          <article class="role">
+            <p class="when">Jan 2025 – Aug 2025</p>
+            <div>
+              <h3>Technical Support Analyst Intern</h3>
+              <p>
+                Automated the support team's slowest fixes, cutting black-screen incidents by 70%.
+              </p>
+              <ul class="chips" aria-label="Skills">
+                <li class="chip">PowerShell</li>
+                <li class="chip">WPF</li>
+                <li class="chip">Python</li>
+                <li class="chip">Selenium</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <section id="projects" class="band">
+          <div class="sec-head">
+            <h2>Projects</h2>
+            <div class="filters" role="group" aria-label="Filter projects">
+              <button type="button" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="software" aria-pressed="false">Software</button>
+              <button type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
+            </div>
           </div>
-        </section>
 
-        <section id="projects" class="border-t border-line py-14">
-          <h2 class="label">Projects</h2>
-          <ul class="mt-4 divide-y divide-line">
-            <li>
-              <a
-                href="https://github.com/Danial-Changez/Nginx-Proxy-Sync"
-                target="_blank"
-                class="project group"
-              >
-                <div class="thumb">
-                  <img
-                    src="/projects/nginx-proxy-sync.svg"
-                    alt="Docker and TrueNAS feeding proxy-sync, which updates Nginx Proxy Manager (NPM) and Pi-hole"
-                    class="size-full object-contain p-3"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="min-w-0">
-                  <h3 class="ext font-medium text-heading group-hover:text-accent">
-                    Nginx Proxy Sync
-                  </h3>
-                  <p class="mt-1.5 leading-relaxed">
-                    Python service that keeps reverse-proxy routes and DNS records in sync with
-                    Docker containers and TrueNAS apps, without touching routes added by hand.
-                  </p>
-                  <p class="mt-2 text-sm text-muted">Python · Docker · REST APIs</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/Danial-Changez/Tetris"
-                target="_blank"
-                class="project group"
-              >
-                <div class="thumb">
-                  <img
-                    src="/projects/tetris.jpg"
-                    alt="Tetris title menu on a monitor"
-                    class="size-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="min-w-0">
-                  <h3 class="ext font-medium text-heading group-hover:text-accent">FPGA Tetris</h3>
-                  <p class="mt-1.5 leading-relaxed">
-                    Tetris in Verilog on a Nexys A7 with a custom 640×480 VGA renderer, save slots
-                    and a high-score table, meeting timing at 50 MHz.
-                  </p>
-                  <p class="mt-2 text-sm text-muted">Verilog · Vivado</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/Danial-Changez/Matrix-Multiplier-AXI4-IP"
-                target="_blank"
-                class="project group"
-              >
-                <div class="thumb">
-                  <img
-                    src="/projects/matrix-multiplier-light.webp"
-                    alt="Vivado block design with the matrix multiplier and the Zynq processing system"
-                    class="size-full object-contain dark:hidden"
-                    loading="lazy"
-                  />
-                  <img
-                    src="/projects/matrix-multiplier-dark.webp"
-                    alt="Vivado block design with the matrix multiplier and the Zynq processing system"
-                    class="hidden size-full object-contain dark:block"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="min-w-0">
-                  <h3 class="ext font-medium text-heading group-hover:text-accent">
-                    Matrix Multiplier IP
-                  </h3>
-                  <p class="mt-1.5 leading-relaxed">
-                    3×3 matrix multiplier in VHDL, packaged as an AXI4-Lite peripheral for the
-                    Zynq-7000 on a ZedBoard and driven by a bare-metal C program on its ARM core.
-                  </p>
-                  <p class="mt-2 text-sm text-muted">VHDL · C · Zynq</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/Danial-Changez/UofG_Schedule_Exporter"
-                target="_blank"
-                class="project group"
-              >
-                <div class="thumb">
-                  <img
-                    src="/projects/schedule-exporter.svg"
-                    alt=""
-                    class="size-full object-contain p-3"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="min-w-0">
-                  <h3 class="ext font-medium text-heading group-hover:text-accent">
-                    UofG Schedule Exporter
-                  </h3>
-                  <p class="mt-1.5 leading-relaxed">
-                    Chrome extension and Python app that export a University of Guelph class
-                    schedule to Google Calendar, Outlook or an ICS file.
-                  </p>
-                  <p class="mt-2 text-sm text-muted">Python · JavaScript · Selenium</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/Danial-Changez/16-Bit-MIPS-CPU"
-                target="_blank"
-                class="project group"
-              >
-                <div class="thumb">
-                  <img
-                    src="/projects/mips-cpu-light.webp"
-                    alt="CPU datapath with the jump and branch units feeding the program counter"
-                    class="size-full object-contain dark:hidden"
-                    loading="lazy"
-                  />
-                  <img
-                    src="/projects/mips-cpu-dark.webp"
-                    alt="CPU datapath with the jump and branch units feeding the program counter"
-                    class="hidden size-full object-contain dark:block"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="min-w-0">
-                  <h3 class="ext font-medium text-heading group-hover:text-accent">
-                    16-Bit MIPS CPU
-                  </h3>
-                  <p class="mt-1.5 leading-relaxed">
-                    A single-cycle 16-bit MIPS-style CPU in VHDL with branch and jump instructions,
-                    built with a course team and verified by a self-checking testbench under GHDL in
-                    CI.
-                  </p>
-                  <p class="mt-2 text-sm text-muted">VHDL · GHDL</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <a
-            href="https://github.com/Danial-Changez"
-            target="_blank"
-            class="ext mt-4 inline-block text-sm text-muted hover:text-heading"
-            >All projects on GitHub</a
-          >
-        </section>
+          <article class="case" data-kind="hardware software">
+            <div class="shot">
+              <img
+                src="/projects/acl-recovery-analyzer.webp"
+                alt="3D render of the knee sleeve beside the app's Recovery Progress screen"
+                width="1280"
+                height="800"
+              />
+            </div>
+            <div>
+              <p class="kind">Hardware + software · 6-person course team</p>
+              <h3>ACL Recovery Analyzer</h3>
+              <dl>
+                <dt>What</dt>
+                <dd>
+                  A knee-rehab wearable that counts reps for 5 exercises and shows live knee angles
+                  on a phone.
+                </dd>
+                <dt>How</dt>
+                <dd>
+                  Two IMUs on an ESP32-S3, fused with a Madgwick filter, streamed over BLE at 10 Hz
+                  to a Kotlin app.
+                </dd>
+                <dt>My part</dt>
+                <dd>All the hardware, firmware and app, from schematic to soldered board.</dd>
+              </dl>
+              <div class="foot">
+                <ul class="chips" aria-label="Skills">
+                  <li class="chip">C++</li>
+                  <li class="chip">ESP32-S3</li>
+                  <li class="chip">BLE</li>
+                  <li class="chip">Kotlin</li>
+                </ul>
+                <a
+                  href="https://github.com/Danial-Changez/ACL-Recovery-Analyzer"
+                  target="_blank"
+                  class="code ext"
+                  >Code</a
+                >
+              </div>
+            </div>
+          </article>
 
-        <section id="skills" class="border-t border-line py-14">
-          <h2 class="label">Skills</h2>
-          <dl class="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-[7rem_1fr]">
-            <dt class="font-medium text-heading">Languages</dt>
-            <dd class="mb-2 sm:mb-0">C#, Python, C/C++, Java, PowerShell, TypeScript, SQL</dd>
-            <dt class="font-medium text-heading">Frameworks</dt>
-            <dd class="mb-2 sm:mb-0">.NET, WPF, Avalonia, xUnit, Pester, Selenium, Mocha</dd>
-            <dt class="font-medium text-heading">Tools</dt>
-            <dd class="mb-2 sm:mb-0">
-              Git, GitHub Actions, Docker, Kubernetes, Azure, Linux, Active Directory
-            </dd>
-            <dt class="font-medium text-heading">Hardware</dt>
-            <dd>Verilog, VHDL, Vivado, Zynq</dd>
-          </dl>
+          <article class="case flip" data-kind="software">
+            <div class="shot fit">
+              <img
+                src="/projects/nginx-proxy-sync.svg"
+                alt="Docker and TrueNAS feeding Proxy Sync, which updates Nginx Proxy Manager and Pi-hole"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="kind">Software</p>
+              <h3>Nginx Proxy Sync</h3>
+              <dl>
+                <dt>What</dt>
+                <dd>
+                  Every app in my homelab gets a proxy route and a local hostname within a minute of
+                  its container starting.
+                </dd>
+                <dt>How</dt>
+                <dd>
+                  A Python service reconciles Docker, TrueNAS and a JSON hosts list with Nginx Proxy
+                  Manager's REST API and Pi-hole.
+                </dd>
+                <dt>Detail</dt>
+                <dd>It tags every route it creates, so it never edits routes added by hand.</dd>
+              </dl>
+              <div class="foot">
+                <ul class="chips" aria-label="Skills">
+                  <li class="chip">Python</li>
+                  <li class="chip">Docker</li>
+                  <li class="chip">REST APIs</li>
+                </ul>
+                <a
+                  href="https://github.com/Danial-Changez/Nginx-Proxy-Sync"
+                  target="_blank"
+                  class="code ext"
+                  >Code</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="case" data-kind="hardware">
+            <div class="shot">
+              <img
+                src="/projects/tetris-board.webp"
+                alt="Nexys A7 board wired to a breadboard of buttons and a VGA monitor"
+                width="1280"
+                height="720"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="kind">Hardware</p>
+              <h3>FPGA Tetris</h3>
+              <dl>
+                <dt>What</dt>
+                <dd>Playable Tetris on a Nexys A7 with save slots and a high-score table.</dd>
+                <dt>How</dt>
+                <dd>
+                  Verilog game logic and a custom 640×480, 60 fps VGA renderer, with debounced
+                  breadboard buttons.
+                </dd>
+                <dt>Result</dt>
+                <dd>Meets timing at 50 MHz.</dd>
+              </dl>
+              <div class="foot">
+                <ul class="chips" aria-label="Skills">
+                  <li class="chip">Verilog</li>
+                  <li class="chip">Vivado</li>
+                </ul>
+                <a href="https://github.com/Danial-Changez/Tetris" target="_blank" class="code ext"
+                  >Code</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <div class="more">
+            <a
+              href="https://github.com/Danial-Changez/Matrix-Multiplier-AXI4-IP"
+              target="_blank"
+              class="mini"
+              data-kind="hardware"
+            >
+              <span class="kind">Hardware</span>
+              <h4 class="ext">Matrix Multiplier IP</h4>
+              <p>3×3 multiplier in VHDL as an AXI4-Lite peripheral on a Zynq-7000.</p>
+              <span class="chips"
+                ><span class="chip">VHDL</span><span class="chip">C</span
+                ><span class="chip">Zynq</span></span
+              >
+            </a>
+            <a
+              href="https://github.com/Danial-Changez/UofG_Schedule_Exporter"
+              target="_blank"
+              class="mini"
+              data-kind="software"
+            >
+              <span class="kind">Software</span>
+              <h4 class="ext">UofG Schedule Exporter</h4>
+              <p>Exports a Guelph class schedule to Google Calendar, Outlook or ICS.</p>
+              <span class="chips"
+                ><span class="chip">Python</span><span class="chip">JavaScript</span></span
+              >
+            </a>
+            <a
+              href="https://github.com/Danial-Changez/16-Bit-MIPS-CPU"
+              target="_blank"
+              class="mini"
+              data-kind="hardware"
+            >
+              <span class="kind">Hardware · course team</span>
+              <h4 class="ext">16-bit MIPS CPU</h4>
+              <p>Single-cycle CPU in VHDL, built with a course team.</p>
+              <span class="chips"><span class="chip">VHDL</span></span>
+            </a>
+          </div>
         </section>
       </main>
 
       <footer
-        class="flex flex-wrap items-center justify-between gap-4 border-t border-line py-10 text-sm text-muted"
+        class="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-9 pb-12 text-[0.9375rem] text-muted"
       >
-        <p>&copy; Danial Changez</p>
-        <nav id="contact" aria-label="Contact" class="flex gap-6">
-          <a data-email class="hover:text-heading">Email</a>
-          <a href="https://github.com/Danial-Changez" target="_blank" class="hover:text-heading"
-            >GitHub</a
-          >
-          <a
-            href="https://linkedin.com/in/danial-changez"
-            target="_blank"
-            class="hover:text-heading"
-            >LinkedIn</a
+        <p>&copy; 2026 Danial Changez</p>
+        <nav id="contact" aria-label="Contact" class="contact">
+          <a data-email="show">Email</a>
+          <a href="https://github.com/Danial-Changez" target="_blank">github.com/Danial-Changez</a>
+          <a href="https://linkedin.com/in/danial-changez" target="_blank"
+            >linkedin.com/in/Danial-Changez</a
           >
         </nav>
       </footer>

@@ -1,38 +1,35 @@
 @import 'tailwindcss';
 
-/* Follows the system theme unless the toggle has set data-theme. */
-@custom-variant dark {
-  &:where([data-theme='dark'], [data-theme='dark'] *) {
-    @slot;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    &:where(:root:not([data-theme='light']), :root:not([data-theme='light']) *) {
-      @slot;
-    }
-  }
-}
-
 @theme inline {
   --color-page: var(--page);
+  --color-surface: var(--surface);
   --color-line: var(--line);
   --color-well: var(--well);
   --color-fg: var(--fg);
   --color-heading: var(--heading);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
 }
 
+@theme {
+  --font-sans: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Follows the system theme unless the toggle has set data-theme. */
 :root {
   color-scheme: light dark;
 
-  --page: light-dark(#fff, #0a0a0a);
-  --line: light-dark(#e5e5e5, #262626);
-  --well: light-dark(#fafafa, #262626);
-  --fg: light-dark(#262626, #d4d4d4);
-  --heading: light-dark(#0a0a0a, #fafafa);
-  --muted: light-dark(#525252, #a3a3a3);
-  --accent: light-dark(#047857, #10b981);
+  --page: light-dark(#fbfcfb, #0b0e0d);
+  --surface: light-dark(#fff, #121715);
+  --well: light-dark(#f1f4f2, #18201c);
+  --line: light-dark(#e2e7e4, #26302b);
+  --fg: light-dark(#27302b, #d3dbd6);
+  --heading: light-dark(#0b120e, #f5f8f6);
+  --muted: light-dark(#5b6660, #98a39d);
+  --accent: light-dark(#047857, #34d399);
+  --accent-soft: light-dark(#e3f3ec, #10261d);
 }
 
 :root[data-theme='light'] {
@@ -44,20 +41,285 @@
 }
 
 @layer components {
-  .label {
-    @apply text-xs font-semibold tracking-[0.14em] text-muted uppercase;
+  .status {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: fit-content;
+    padding: 0.375rem 0.75rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font: 500 0.8125rem var(--font-mono);
   }
 
-  .project {
-    @apply grid gap-4 py-6 sm:grid-cols-[1fr_19rem] sm:gap-8;
+  .status::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: currentcolor;
+    box-shadow: 0 0 0 4px color-mix(in oklab, currentcolor 25%, transparent);
   }
 
-  .thumb {
-    @apply aspect-video overflow-hidden rounded-lg border border-line bg-well sm:order-last;
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.625rem;
+    background: var(--surface);
+    color: var(--heading);
+    font-weight: 500;
+    transition:
+      border-color 150ms ease-out,
+      scale 150ms ease-out;
   }
 
-  .pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-fg transition-[border-color,scale] duration-150 ease-out hover:border-muted motion-safe:active:scale-[0.97];
+  .btn:hover {
+    border-color: var(--muted);
+  }
+
+  .btn-primary {
+    border-color: var(--heading);
+    background: var(--heading);
+    color: var(--page);
+  }
+
+  .btn-primary:hover {
+    border-color: var(--heading);
+    opacity: 0.88;
+  }
+
+  .band {
+    padding-block: 3.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .sec-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+  }
+
+  .sec-head h2 {
+    color: var(--heading);
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  .role {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 1.5rem;
+    padding-block: 1.375rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .role:first-of-type {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .role h3 {
+    color: var(--heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .role p {
+    max-width: 70ch;
+    margin: 0.5rem 0 0.875rem;
+  }
+
+  .when {
+    color: var(--muted);
+    font: 0.8125rem / 1.7 var(--font-mono);
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .chip {
+    padding: 0.375rem 0.5625rem;
+    border: 1px solid var(--line);
+    border-radius: 0.375rem;
+    background: var(--well);
+    font: 0.75rem / 1 var(--font-mono);
+  }
+
+  .kind {
+    color: var(--accent);
+    font: 0.75rem var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .filters {
+    display: inline-flex;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--well);
+  }
+
+  .filters button {
+    padding: 0.4375rem 0.875rem;
+    border-radius: 0.5625rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .filters button[aria-pressed='true'] {
+    background: var(--surface);
+    color: var(--heading);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+  }
+
+  .case {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    padding-block: 1.75rem;
+  }
+
+  .case + .case {
+    border-top: 1px dashed var(--line);
+  }
+
+  .case > div:last-child {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .shot {
+    overflow: hidden;
+    align-self: start;
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--well);
+  }
+
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .shot.fit img {
+    padding: 1.375rem;
+    object-fit: contain;
+  }
+
+  .case.flip .shot {
+    order: 2;
+  }
+
+  .case h3 {
+    margin-top: 0.375rem;
+    color: var(--heading);
+    font-size: 1.625rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .case dl {
+    display: grid;
+    grid-template-columns: 4.75rem minmax(0, 1fr);
+    gap: 0.5rem 1rem;
+    margin: 1.125rem 0 1.25rem;
+  }
+
+  .case dt {
+    color: var(--muted);
+    font: 500 0.6875rem / 2 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .case .foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .more {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .mini {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 1.125rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 0.875rem;
+    background: var(--surface);
+    transition: border-color 150ms ease-out;
+  }
+
+  .mini:hover {
+    border-color: var(--muted);
+  }
+
+  .mini h4 {
+    color: var(--heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .mini p {
+    margin-bottom: 0.375rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .mini .chips {
+    margin-top: auto;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem 1.5rem;
+    font: 0.875rem var(--font-mono);
+  }
+
+  .contact a {
+    overflow-wrap: anywhere;
+    color: var(--heading);
+  }
+
+  .code {
+    color: var(--heading);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .contact a:hover,
+  .code:hover {
+    color: var(--accent);
   }
 
   .ext::after {
@@ -69,5 +331,49 @@
     background: currentcolor;
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3.5 8.5l5-5M4.5 3.5h4v4' fill='none' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
       center / contain no-repeat;
+  }
+
+  :is(a, button):focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  @media (width <= 48rem) {
+    .role,
+    .case {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .role {
+      gap: 0.375rem;
+    }
+
+    .case {
+      gap: 1.125rem;
+      padding-block: 1.375rem;
+    }
+
+    .case.flip .shot {
+      order: 0;
+    }
+
+    .case h3 {
+      font-size: 1.375rem;
+    }
+
+    .more {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sec-head h2 {
+      font-size: 1.625rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn,
+    .mini {
+      transition: none;
+    }
   }
 }

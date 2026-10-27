@@ -1,7 +1,7 @@
 # Portfolio
 
 Source of [dchangez.com](https://dchangez.com), Danial Changez's one-page portfolio: intro,
-experience, projects and skills, with email, GitHub and LinkedIn links in the footer.
+work and projects, with email, GitHub and LinkedIn links in the footer.
 
 ## Stack
 
@@ -15,12 +15,11 @@ Nothing ships as a runtime dependency; every package in `package.json` is build 
 ## Layout
 
 - `index.html`: the page markup
-- `src/main.ts`: the theme toggle and the email links, which assemble the address at runtime so it
-  never appears whole in the page source
-- `src/style.css`: Tailwind import, the light and dark colour tokens, and a `dark` variant that
-  follows the system theme unless the toggle overrides it
-- `public/`: files served as they are (`favicon.png`, `projects/`, `404.html`). Project images
-  that need a version per theme come as `-light` and `-dark` files.
+- `src/main.ts`: the theme toggle, the Software / Hardware project filter, and the email links,
+  which assemble the address at runtime so it never appears whole in the page source
+- `src/style.css`: Tailwind import, the fonts, the light and dark colour tokens (they follow the
+  system theme unless the toggle overrides it) and the page's component classes
+- `public/`: files served as they are (`favicon.png`, `projects/`, `404.html`)
 - `diagrams/`: PlantUML sources for diagram images in `public/projects/`, with the service logos
   they use in `diagrams/icons/` (Simple Icons, CC0)
 - `test/`: checks that local links in `index.html` resolve (CI also greps the build for a plain
